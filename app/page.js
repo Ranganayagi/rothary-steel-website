@@ -141,7 +141,7 @@ export default function Home() {
       key={id}
       href={`#${id}`}
       onClick={() => setActive(id)}
-      className={`px-5 py-2 rounded-full font-bold transition duration-300
+      className={`whitespace-nowrap px-5 py-2 rounded-full font-bold transition duration-300
       ${
         active === id
           ? "bg-gradient-to-r from-[#d4af37] to-[#8a6a14] text-white shadow-lg scale-105"
@@ -156,7 +156,7 @@ export default function Home() {
 
     <a
       href="#contact"
-      className="hidden md:inline-block bg-gradient-to-b from-[#fff1a6] via-[#d4af37] to-[#8f6913] text-black px-8 py-3 rounded-full font-black border border-[#fff1a6] shadow-[0_5px_0_#5f4508,0_0_18px_rgba(212,175,55,0.8)]"
+      className="whitespace-nowrap hidden md:inline-block bg-gradient-to-b from-[#fff1a6] via-[#d4af37] to-[#8f6913] text-black px-8 py-3 rounded-full font-black border border-[#fff1a6] shadow-[0_5px_0_#5f4508,0_0_18px_rgba(212,175,55,0.8)]"
     >
       GET QUOTE
     </a>
