@@ -96,85 +96,44 @@ export default function Home() {
       
       {/* NAVBAR */}
 <header
-  className="sticky top-0 z-50 border-b border-[#d4af37]/40 shadow-[0_10px_35px_rgba(0,0,0,0.45)] bg-cover bg-center"
+  className="sticky top-0 z-50 bg-cover bg-center shadow-[0_8px_25px_rgba(0,0,0,0.45)] border-b border-[#d4af37]"
   style={{
-    backgroundImage:
-      "linear-gradient(rgba(10,40,28,0.82), rgba(10,40,28,0.82)), url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122')",
+    backgroundImage: "url('/navbar-bg.png')",
   }}
 >
-  <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+  <div className="max-w-7xl mx-auto px-6 py-2 flex items-center justify-between">
 
-    {/* LOGO + NAME */}
     <div className="flex items-center gap-4">
-
-      {/* LOGO */}
       <img
         src="/logo.png"
         alt="Rothary Steel Tech Engineering Logo"
-        className="h-20 w-auto drop-shadow-[0_0_18px_rgba(255,255,255,0.55)]"
+        className="h-20 w-auto drop-shadow-[0_0_12px_rgba(255,255,255,0.8)]"
       />
 
-      {/* COMPANY NAME */}
-      <div className="leading-tight">
-        <h1
-          className="text-[#f5d76e] text-xl md:text-3xl font-black tracking-wide"
-          style={{
-            textShadow:
-              "0 2px 4px rgba(0,0,0,0.6), 0 0 12px rgba(212,175,55,0.45)",
-          }}
-        >
-          ROTHARY STEEL TECH
-          <br />
-          ENGINEERING
-        </h1>
-      </div>
-
+      <h1
+        className="text-[#f5d76e] text-xl md:text-2xl font-black tracking-wide leading-tight"
+        style={{
+          textShadow: "2px 2px 3px #000, 0 0 8px rgba(245,215,110,0.7)",
+        }}
+      >
+        ROTHARY STEEL TECH
+        <br />
+        ENGINEERING
+      </h1>
     </div>
 
-    {/* MENU */}
-    <nav className="hidden md:flex items-center gap-3">
-
-      <a
-        href="#home"
-        className="px-5 py-2 rounded-full text-[#f5d76e] font-bold border border-[#d4af37] bg-black/25 backdrop-blur-md shadow-lg hover:scale-105 transition"
-      >
+    <nav className="hidden md:flex items-center gap-4 text-sm font-bold">
+      <a className="px-4 py-2 rounded-full text-[#f5d76e] border border-[#d4af37] bg-black/35" href="#home">
         HOME
       </a>
-
-      <a
-        href="#about"
-        className="px-5 py-2 rounded-full text-white font-semibold hover:bg-white/10 transition"
-      >
-        ABOUT US
-      </a>
-
-      <a
-        href="#services"
-        className="px-5 py-2 rounded-full text-white font-semibold hover:bg-white/10 transition"
-      >
-        SERVICES
-      </a>
-
-      <a
-        href="#projects"
-        className="px-5 py-2 rounded-full text-white font-semibold hover:bg-white/10 transition"
-      >
-        PROJECTS
-      </a>
-
-      <a
-        href="#contact"
-        className="px-5 py-2 rounded-full text-white font-semibold hover:bg-white/10 transition"
-      >
-        CONTACT
-      </a>
-
+      <a className="text-[#f5d76e] hover:text-white" href="#about">ABOUT US</a>
+      <a className="text-[#f5d76e] hover:text-white" href="#projects">PROJECTS</a>
+      <a className="text-[#f5d76e] hover:text-white" href="#contact">CONTACT</a>
     </nav>
 
-    {/* CTA BUTTON */}
     <a
       href="#contact"
-      className="hidden md:inline-block bg-gradient-to-b from-[#ffe27a] via-[#d4af37] to-[#8f6913] text-black px-8 py-3 rounded-full font-black shadow-[0_6px_0_#5f4508,0_12px_25px_rgba(0,0,0,0.4)] hover:translate-y-1 hover:shadow-[0_3px_0_#5f4508,0_8px_18px_rgba(0,0,0,0.35)] transition"
+      className="hidden md:inline-block bg-gradient-to-b from-[#fff1a6] via-[#d4af37] to-[#8f6913] text-black px-8 py-3 rounded-full font-black border border-[#fff1a6] shadow-[0_5px_0_#5f4508,0_0_18px_rgba(212,175,55,0.8)]"
     >
       GET QUOTE
     </a>
