@@ -94,11 +94,12 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-white text-[#06142b]">
       
+      
       {/* NAVBAR */}
 <header
   className="sticky top-0 z-50 bg-cover bg-center shadow-[0_8px_25px_rgba(0,0,0,0.45)] border-b border-[#d4af37]"
   style={{
-    backgroundImage: "url('/navbar-bg.png')",
+    backgroundImage: "/navback.png",
   }}
 >
   <div className="max-w-7xl mx-auto px-6 py-2 flex items-center justify-between">
