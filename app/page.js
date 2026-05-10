@@ -101,62 +101,72 @@ export default function Home() {
       
       {/* NAVBAR */}
 <header
-  className="sticky top-0 z-50 bg-cover bg-center shadow-[0_8px_25px_rgba(0,0,0,0.45)] border-b border-[#d4af37]"
+  className="sticky top-0 z-50 border-b border-[#d4af37]/40 shadow-[0_10px_40px_rgba(0,0,0,0.55)] bg-cover bg-center backdrop-blur-xl"
   style={{
-    backgroundImage: "linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('/newback.png')",
+    backgroundImage:
+      "linear-gradient(rgba(8,35,24,0.88), rgba(8,35,24,0.88)), url('/newback.png')",
   }}
 >
-  <div className="max-w-7xl mx-auto px-6 py-2 flex items-center justify-between">
+  <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
 
+    {/* LOGO + NAME */}
     <div className="flex items-center gap-4">
+
       <img
         src="/logo.png"
         alt="Rothary Steel Tech Engineering Logo"
-        className="h-24 w-auto drop-shadow-[0_0_12px_rgba(255,255,255,0.8)]"
+        className="h-24 w-auto drop-shadow-[0_0_18px_rgba(255,255,255,0.85)]"
       />
 
       <h1
-        className="text-[#f5d76e] text-xl md:text-2xl font-black tracking-wide leading-tight"
+        className="text-[#f8e08b] text-2xl md:text-3xl font-black tracking-wide leading-tight"
         style={{
-          textShadow: "2px 2px 3px #000, 0 0 8px rgba(245,215,110,0.7)",
+          textShadow:
+            "0 2px 5px rgba(0,0,0,0.7), 0 0 14px rgba(212,175,55,0.55)",
         }}
       >
         ROTHARY STEEL TECH
         <br />
         ENGINEERING
       </h1>
+
     </div>
 
     {/* MENU */}
-<nav className="hidden md:flex items-center gap-3 bg-black/20 px-3 py-2 rounded-full border border-[#d4af37]/30 backdrop-blur-md">
+    <nav className="hidden md:flex items-center gap-3 bg-black/20 px-4 py-2 rounded-full border border-[#d4af37]/20 backdrop-blur-md">
 
-  {[
-    ["home", "HOME"],
-    ["about", "ABOUT US"],
-    ["services", "SERVICES"],
-    ["projects", "PROJECTS"],
-    ["contact", "CONTACT"],
-  ].map(([id, label]) => (
-    <a
-      key={id}
-      href={`#${id}`}
-      onClick={() => setActive(id)}
-      className={`whitespace-nowrap px-5 py-2 rounded-full font-bold transition duration-300
-      ${
-        active === id
-          ? "bg-gradient-to-r from-[#d4af37] to-[#8a6a14] text-white shadow-lg scale-105"
-          : "text-[#f5d76e] hover:bg-[#d4af37]/20 hover:text-white"
-      }`}
-    >
-      {label}
-    </a>
-  ))}
+      {[
+        ["home", "HOME"],
+        ["about", "ABOUT US"],
+        ["services", "SERVICES"],
+        ["projects", "PROJECTS"],
+        ["contact", "CONTACT"],
+      ].map(([id, label]) => (
+        <a
+          key={id}
+          href={`#${id}`}
+          onClick={() => setActive(id)}
+          className={`whitespace-nowrap px-5 py-2 rounded-full font-bold transition duration-300
+          ${
+            active === id
+              ? "bg-gradient-to-r from-[#ffe27a] via-[#d4af37] to-[#8a6a14] text-black shadow-[0_0_18px_rgba(212,175,55,0.8)] scale-105"
+              : "text-[#f5d76e] hover:bg-[#d4af37]/20 hover:text-white"
+          }`}
+        >
+          {label}
+        </a>
+      ))}
 
-</nav>
+    </nav>
 
+    {/* PREMIUM CTA BUTTON */}
     <a
       href="#contact"
-      className="whitespace-nowrap hidden md:inline-block bg-gradient-to-b from-[#fff1a6] via-[#d4af37] to-[#8f6913] text-black px-8 py-3 rounded-full font-black border border-[#fff1a6] shadow-[0_5px_0_#5f4508,0_0_18px_rgba(212,175,55,0.8)]"
+      className="whitespace-nowrap hidden md:inline-block relative px-9 py-4 text-black font-black tracking-wide rounded-full overflow-hidden border border-[#fff1a6]
+      bg-gradient-to-b from-[#fff4b0] via-[#d4af37] to-[#7a5b10]
+      shadow-[0_8px_0_#5c4309,0_14px_28px_rgba(0,0,0,0.45),0_0_25px_rgba(212,175,55,0.65)]
+      hover:translate-y-1 hover:shadow-[0_4px_0_#5c4309,0_10px_20px_rgba(0,0,0,0.4)]
+      transition duration-300"
     >
       GET QUOTE
     </a>
@@ -164,49 +174,97 @@ export default function Home() {
   </div>
 </header>
 
-      {/* HERO */}
-      <section
-        id="home"
-        className="relative min-h-[78vh] flex items-center bg-cover bg-center"
+{/* HERO */}
+<section
+  id="home"
+  className="relative min-h-[92vh] flex items-center overflow-hidden bg-cover bg-center"
+  style={{
+    backgroundImage:
+      "url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122')",
+  }}
+>
+
+  {/* DARK OVERLAY */}
+  <div className="absolute inset-0 bg-[#06142b]/85"></div>
+
+  {/* SPARK EFFECT */}
+  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#d4af37]/10 to-transparent"></div>
+
+  {/* HERO CONTENT */}
+  <div className="relative max-w-7xl mx-auto px-6 w-full grid md:grid-cols-2 gap-10 items-center">
+
+    {/* LEFT TEXT */}
+    <div>
+
+      <div className="inline-block px-5 py-2 rounded-full border border-[#d4af37]/40 bg-black/25 text-[#f5d76e] font-bold tracking-wide mb-6">
+        INDUSTRIAL ENGINEERING & FABRICATION
+      </div>
+
+      <h2
+        className="text-5xl md:text-7xl font-black text-white leading-[1.05]"
         style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122')",
+          textShadow:
+            "0 3px 10px rgba(0,0,0,0.75), 0 0 18px rgba(212,175,55,0.25)",
         }}
       >
-        <div className="absolute inset-0 bg-black/60"></div>
+        PRECISION
+        <br />
+        STEEL
+        <br />
+        ENGINEERING.
+      </h2>
 
-        <div className="relative max-w-7xl mx-auto px-6 w-full">
-          <div className="max-w-4xl">
-            <h2 className="text-5xl md:text-7xl font-black text-white leading-tight drop-shadow-2xl">
-              PRECISION STEEL
-              <br />
-              FABRICATION &
-              <br />
-              ENGINEERING.
-            </h2>
+      <p className="mt-8 text-2xl text-gray-200 leading-relaxed max-w-2xl">
+        Delivering high-quality steel fabrication, structure works, welding,
+        awnings, gates and innovative engineering solutions with reliability and professionalism.
+      </p>
 
-            <p className="mt-6 text-2xl text-white font-medium">
-              Gates • Awnings • Welding • Structure Work • Metal Works
-            </p>
+      <div className="mt-10 flex flex-wrap gap-5">
 
-            <div className="mt-10 flex flex-wrap gap-5">
-              <a
-                href="#services"
-                className="border-2 border-[#d4af37] bg-black/40 text-[#f5d76e] px-8 py-4 font-bold text-lg"
-              >
-                OUR SERVICES
-              </a>
+        <a
+          href="#services"
+          className="px-8 py-4 border-2 border-[#d4af37] bg-black/40 text-[#f5d76e] font-black rounded-full shadow-xl hover:bg-[#d4af37]/20 transition"
+        >
+          OUR SERVICES
+        </a>
 
-              <a
-                href="#contact"
-                className="bg-gradient-to-r from-[#d4af37] to-[#f3d36b] text-black px-8 py-4 font-bold text-lg border border-[#f5df8e]"
-              >
-                GET A QUOTE
-              </a>
-            </div>
-          </div>
+        <a
+          href="#projects"
+          className="px-8 py-4 bg-gradient-to-r from-[#ffe27a] via-[#d4af37] to-[#8a6a14] text-black font-black rounded-full shadow-[0_0_20px_rgba(212,175,55,0.65)] hover:scale-105 transition"
+        >
+          VIEW PROJECTS
+        </a>
+
+      </div>
+
+    </div>
+
+    {/* RIGHT ENGINEERING VISUAL */}
+    <div className="hidden md:flex justify-center">
+
+      <div className="relative">
+
+        {/* GLOW */}
+        <div className="absolute inset-0 bg-[#4da6ff]/20 blur-3xl rounded-full"></div>
+
+        {/* ENGINEERING FRAME */}
+        <div className="relative border border-[#4da6ff]/40 bg-black/25 backdrop-blur-md rounded-3xl p-8 shadow-[0_0_35px_rgba(77,166,255,0.25)]">
+
+          <img
+            src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789"
+            alt="Engineering Structure"
+            className="w-[480px] h-[520px] object-cover rounded-2xl border border-[#d4af37]/30"
+          />
+
         </div>
-      </section>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
 
       {/* ABOUT */}
       <section id="about" className="py-20 px-6 bg-white">
