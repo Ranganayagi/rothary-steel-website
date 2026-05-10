@@ -237,6 +237,58 @@ export default function Home() {
         </div>
       </section>
 
+      {/* VISION & MISSION */}
+<section className="relative py-20 px-6 bg-cover bg-center"
+  style={{
+    backgroundImage:
+      "linear-gradient(rgba(6,20,43,0.88), rgba(6,20,43,0.88)), url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122')",
+  }}
+>
+
+  <div className="max-w-7xl mx-auto">
+
+    <h2 className="text-5xl font-black text-center text-white mb-16">
+      VISION & MISSION
+    </h2>
+
+    <div className="grid md:grid-cols-2 gap-10">
+
+      {/* VISION */}
+      <div className="bg-white/10 backdrop-blur-md border border-[#d4af37]/40 rounded-3xl p-10 shadow-2xl hover:-translate-y-2 transition duration-300">
+
+        <div className="text-6xl mb-5">👁️</div>
+
+        <h3 className="text-4xl font-black text-[#f5d76e] mb-6">
+          OUR VISION
+        </h3>
+
+        <p className="text-xl text-white leading-relaxed">
+          To be a trusted leader in steel fabrication and engineering solutions.
+        </p>
+
+      </div>
+
+      {/* MISSION */}
+      <div className="bg-white/10 backdrop-blur-md border border-[#d4af37]/40 rounded-3xl p-10 shadow-2xl hover:-translate-y-2 transition duration-300">
+
+        <div className="text-6xl mb-5">🎯</div>
+
+        <h3 className="text-4xl font-black text-[#f5d76e] mb-6">
+          OUR MISSION
+        </h3>
+
+        <p className="text-xl text-white leading-relaxed">
+          Delivering quality workmanship, reliable service, and innovative engineering solutions with integrity and professionalism.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
       {/* SERVICES */}
       <section id="services" className="py-20 px-6 bg-white">
         <h2 className="text-5xl font-black text-center text-[#06142b] mb-14">
