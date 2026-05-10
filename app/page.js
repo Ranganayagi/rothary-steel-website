@@ -93,60 +93,78 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-white text-[#06142b]">
+      
       {/* NAVBAR */}
-<header className="sticky top-0 z-50 bg-gradient-to-r from-[#8fcfb3] via-[#b7e4c7] to-[#7bc8a4] shadow-[0_10px_30px_rgba(0,0,0,0.25)] border-b border-white/30 backdrop-blur-xl">
+<header
+  className="sticky top-0 z-50 border-b border-[#d4af37]/40 shadow-[0_10px_35px_rgba(0,0,0,0.45)] bg-cover bg-center"
+  style={{
+    backgroundImage:
+      "linear-gradient(rgba(10,40,28,0.82), rgba(10,40,28,0.82)), url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122')",
+  }}
+>
+  <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
 
-  <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-
-    {/* LOGO + COMPANY NAME */}
+    {/* LOGO + NAME */}
     <div className="flex items-center gap-4">
 
+      {/* LOGO */}
       <img
         src="/logo.png"
         alt="Rothary Steel Tech Engineering Logo"
-        className="h-16 w-auto drop-shadow-[0_5px_12px_rgba(0,0,0,0.5)]"
+        className="h-20 w-auto drop-shadow-[0_0_18px_rgba(255,255,255,0.55)]"
       />
 
-      <h1 className="text-[#083d2b] text-lg md:text-2xl font-black tracking-wide">
-        ROTHARY STEEL TECH ENGINEERING
-      </h1>
+      {/* COMPANY NAME */}
+      <div className="leading-tight">
+        <h1
+          className="text-[#f5d76e] text-xl md:text-3xl font-black tracking-wide"
+          style={{
+            textShadow:
+              "0 2px 4px rgba(0,0,0,0.6), 0 0 12px rgba(212,175,55,0.45)",
+          }}
+        >
+          ROTHARY STEEL TECH
+          <br />
+          ENGINEERING
+        </h1>
+      </div>
 
     </div>
 
     {/* MENU */}
-    <nav className="hidden md:flex items-center gap-2">
+    <nav className="hidden md:flex items-center gap-3">
 
       <a
         href="#home"
-        className="px-5 py-2 rounded-full text-white font-bold bg-[#0f5132] shadow-lg"
+        className="px-5 py-2 rounded-full text-[#f5d76e] font-bold border border-[#d4af37] bg-black/25 backdrop-blur-md shadow-lg hover:scale-105 transition"
       >
         HOME
       </a>
 
       <a
         href="#about"
-        className="px-5 py-2 rounded-full text-[#083d2b] font-semibold hover:bg-white/10 transition"
+        className="px-5 py-2 rounded-full text-white font-semibold hover:bg-white/10 transition"
       >
         ABOUT US
       </a>
 
       <a
         href="#services"
-        className="px-5 py-2 rounded-full text-[#083d2b] font-semibold hover:bg-white/10 transition"
+        className="px-5 py-2 rounded-full text-white font-semibold hover:bg-white/10 transition"
       >
         SERVICES
       </a>
 
       <a
         href="#projects"
-        className="px-5 py-2 rounded-full text-[#083d2b] font-semibold hover:bg-white/10 transition"
+        className="px-5 py-2 rounded-full text-white font-semibold hover:bg-white/10 transition"
       >
         PROJECTS
       </a>
 
       <a
         href="#contact"
-        className="px-5 py-2 rounded-full text-[#083d2b] font-semibold hover:bg-white/10 transition"
+        className="px-5 py-2 rounded-full text-white font-semibold hover:bg-white/10 transition"
       >
         CONTACT
       </a>
@@ -156,13 +174,12 @@ export default function Home() {
     {/* CTA BUTTON */}
     <a
       href="#contact"
-      className="hidden md:inline-block bg-gradient-to-b from-[#ffe27a] via-[#d4af37] to-[#9b7414] text-black px-7 py-3 rounded-full font-black shadow-[0_8px_0_#5f4508,0_14px_25px_rgba(0,0,0,0.35)] hover:translate-y-1 hover:shadow-[0_4px_0_#5f4508,0_10px_20px_rgba(0,0,0,0.35)] transition"
+      className="hidden md:inline-block bg-gradient-to-b from-[#ffe27a] via-[#d4af37] to-[#8f6913] text-black px-8 py-3 rounded-full font-black shadow-[0_6px_0_#5f4508,0_12px_25px_rgba(0,0,0,0.4)] hover:translate-y-1 hover:shadow-[0_3px_0_#5f4508,0_8px_18px_rgba(0,0,0,0.35)] transition"
     >
       GET QUOTE
     </a>
 
   </div>
-
 </header>
 
       {/* HERO */}
