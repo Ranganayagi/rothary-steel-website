@@ -94,7 +94,7 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-white text-[#06142b]">
       {/* NAVBAR */}
-<header className="sticky top-0 z-50 bg-gradient-to-r from-[#0f3d2e] via-[#1f6b52] to-[#0f3d2e] shadow-[0_10px_30px_rgba(0,0,0,0.45)] border-b border-[#d4af37]/40 backdrop-blur-xl">
+<header className="sticky top-0 z-50 bg-gradient-to-r from-[#8fcfb3] via-[#b7e4c7] to-[#7bc8a4] shadow-[0_10px_30px_rgba(0,0,0,0.25)] border-b border-white/30 backdrop-blur-xl">
 
   <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
 
@@ -107,7 +107,7 @@ export default function Home() {
         className="h-16 w-auto drop-shadow-[0_5px_12px_rgba(0,0,0,0.5)]"
       />
 
-      <h1 className="text-white text-lg md:text-2xl font-black tracking-wide">
+      <h1 className="text-[#083d2b] text-lg md:text-2xl font-black tracking-wide">
         ROTHARY STEEL TECH ENGINEERING
       </h1>
 
@@ -118,35 +118,35 @@ export default function Home() {
 
       <a
         href="#home"
-        className="px-5 py-2 rounded-full text-[#d4af37] font-bold bg-black/20 backdrop-blur-md"
+        className="px-5 py-2 rounded-full text-white font-bold bg-[#0f5132] shadow-lg"
       >
         HOME
       </a>
 
       <a
         href="#about"
-        className="px-5 py-2 rounded-full text-white font-semibold hover:bg-white/10 transition"
+        className="px-5 py-2 rounded-full text-[#083d2b] font-semibold hover:bg-white/10 transition"
       >
         ABOUT US
       </a>
 
       <a
         href="#services"
-        className="px-5 py-2 rounded-full text-white font-semibold hover:bg-white/10 transition"
+        className="px-5 py-2 rounded-full text-[#083d2b] font-semibold hover:bg-white/10 transition"
       >
         SERVICES
       </a>
 
       <a
         href="#projects"
-        className="px-5 py-2 rounded-full text-white font-semibold hover:bg-white/10 transition"
+        className="px-5 py-2 rounded-full text-[#083d2b] font-semibold hover:bg-white/10 transition"
       >
         PROJECTS
       </a>
 
       <a
         href="#contact"
-        className="px-5 py-2 rounded-full text-white font-semibold hover:bg-white/10 transition"
+        className="px-5 py-2 rounded-full text-[#083d2b] font-semibold hover:bg-white/10 transition"
       >
         CONTACT
       </a>
