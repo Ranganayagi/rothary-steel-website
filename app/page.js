@@ -1,10 +1,10 @@
-import Image from "next/image";
-import { useState } from "react";
-
 "use client";
+
+import { useState } from "react";
 
 export default function Home() {
   const [active, setActive] = useState("home");
+
   const services = [
     {
       title: "C ROOF",
@@ -133,6 +133,7 @@ export default function Home() {
   {[
     ["home", "HOME"],
     ["about", "ABOUT US"],
+    ["services", "SERVICES"],
     ["projects", "PROJECTS"],
     ["contact", "CONTACT"],
   ].map(([id, label]) => (
