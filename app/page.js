@@ -94,45 +94,57 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-white text-[#06142b]">
       {/* NAVBAR */}
-      <header className="sticky top-0 z-50 bg-[#08245c] border-b-4 border-[#c9a646] shadow-xl">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          
-          {/* LOGO + COMPANY NAME */}
-          <div className="flex items-center gap-4">
-            <div className="bg-white p-2 rounded-xl shadow-lg border-2 border-[#d4af37]">
-              <img
-                src="/logo.png"
-                alt="Rothary Steel Tech Engineering Logo"
-                className="h-16 w-auto"
-              />
-            </div>
+<header className="sticky top-0 z-50 bg-[#06142b]/95 backdrop-blur-xl shadow-[0_12px_35px_rgba(0,0,0,0.45)] border-b border-[#d4af37]/70">
+  <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
 
-            <div className="leading-tight">
-              <h1 className="text-white text-xl md:text-2xl font-black tracking-wide">
-                ROTHARY
-              </h1>
-              <p className="text-[#d4af37] text-sm md:text-base font-bold tracking-wide">
-                STEEL TECH ENGINEERING
-              </p>
-            </div>
-          </div>
+    {/* LOGO + COMPANY NAME */}
+    <div className="flex items-center gap-4">
+      <div className="bg-gradient-to-br from-white to-gray-300 p-2 rounded-2xl shadow-[0_8px_20px_rgba(212,175,55,0.35)] border border-[#d4af37]">
+        <img
+          src="/logo.png"
+          alt="Rothary Steel Tech Engineering Logo"
+          className="h-14 w-auto"
+        />
+      </div>
 
-          <nav className="hidden md:flex items-center gap-8 text-white font-semibold tracking-wide">
-            <a href="#home" className="text-[#d4af37]">HOME</a>
-            <a href="#about" className="hover:text-[#d4af37]">ABOUT US</a>
-            <a href="#services" className="hover:text-[#d4af37]">SERVICES</a>
-            <a href="#projects" className="hover:text-[#d4af37]">PROJECTS</a>
-            <a href="#contact" className="hover:text-[#d4af37]">CONTACT</a>
-          </nav>
+      <div className="leading-tight">
+        <h1 className="text-white text-lg md:text-2xl font-black tracking-wide drop-shadow">
+          ROTHARY
+        </h1>
+        <p className="text-[#d4af37] text-xs md:text-sm font-bold tracking-[0.2em]">
+          STEEL TECH ENGINEERING
+        </p>
+      </div>
+    </div>
 
-          <a
-            href="#contact"
-            className="hidden md:inline-block bg-gradient-to-r from-[#d4af37] to-[#f3d36b] text-black px-7 py-3 font-bold border border-[#f5df8e] shadow-lg"
-          >
-            REQUEST A QUOTE
-          </a>
-        </div>
-      </header>
+    {/* MENU */}
+    <nav className="hidden md:flex items-center gap-2 bg-white/5 border border-white/10 px-3 py-2 rounded-full shadow-inner">
+      <a href="#home" className="px-4 py-2 rounded-full text-[#d4af37] font-bold bg-white/10 shadow">
+        HOME
+      </a>
+      <a href="#about" className="px-4 py-2 rounded-full text-white font-semibold hover:bg-[#d4af37] hover:text-black transition">
+        ABOUT US
+      </a>
+      <a href="#services" className="px-4 py-2 rounded-full text-white font-semibold hover:bg-[#d4af37] hover:text-black transition">
+        SERVICES
+      </a>
+      <a href="#projects" className="px-4 py-2 rounded-full text-white font-semibold hover:bg-[#d4af37] hover:text-black transition">
+        PROJECTS
+      </a>
+      <a href="#contact" className="px-4 py-2 rounded-full text-white font-semibold hover:bg-[#d4af37] hover:text-black transition">
+        CONTACT
+      </a>
+    </nav>
+
+    {/* CTA BUTTON */}
+    <a
+      href="#contact"
+      className="hidden md:inline-block bg-gradient-to-b from-[#ffe27a] via-[#d4af37] to-[#9b7414] text-black px-7 py-3 rounded-full font-black shadow-[0_8px_0_#5f4508,0_14px_25px_rgba(0,0,0,0.35)] hover:translate-y-1 hover:shadow-[0_4px_0_#5f4508,0_10px_20px_rgba(0,0,0,0.35)] transition"
+    >
+      GET QUOTE
+    </a>
+  </div>
+</header>
 
       {/* HERO */}
       <section
