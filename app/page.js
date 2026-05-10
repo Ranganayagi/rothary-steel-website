@@ -1,6 +1,10 @@
 import Image from "next/image";
+import { useState } from "react";
+
+"use client";
 
 export default function Home() {
+  const [active, setActive] = useState("home");
   const services = [
     {
       title: "C ROOF",
@@ -99,7 +103,7 @@ export default function Home() {
 <header
   className="sticky top-0 z-50 bg-cover bg-center shadow-[0_8px_25px_rgba(0,0,0,0.45)] border-b border-[#d4af37]"
   style={{
-    backgroundImage: "url('/navback.png')",
+    backgroundImage: "url('/newback.png')",
   }}
 >
   <div className="max-w-7xl mx-auto px-6 py-2 flex items-center justify-between">
@@ -123,14 +127,31 @@ export default function Home() {
       </h1>
     </div>
 
-    <nav className="hidden md:flex items-center gap-4 text-sm font-bold">
-      <a className="px-4 py-2 rounded-full text-[#f5d76e] border border-[#d4af37] bg-black/35" href="#home">
-        HOME
-      </a>
-      <a className="text-[#f5d76e] hover:text-white" href="#about">ABOUT US</a>
-      <a className="text-[#f5d76e] hover:text-white" href="#projects">PROJECTS</a>
-      <a className="text-[#f5d76e] hover:text-white" href="#contact">CONTACT</a>
-    </nav>
+    {/* MENU */}
+<nav className="hidden md:flex items-center gap-3 bg-black/20 px-3 py-2 rounded-full border border-[#d4af37]/30 backdrop-blur-md">
+
+  {[
+    ["home", "HOME"],
+    ["about", "ABOUT US"],
+    ["projects", "PROJECTS"],
+    ["contact", "CONTACT"],
+  ].map(([id, label]) => (
+    <a
+      key={id}
+      href={`#${id}`}
+      onClick={() => setActive(id)}
+      className={`px-5 py-2 rounded-full font-bold transition duration-300
+      ${
+        active === id
+          ? "bg-gradient-to-r from-[#d4af37] to-[#8a6a14] text-white shadow-lg scale-105"
+          : "text-[#f5d76e] hover:bg-[#d4af37]/20 hover:text-white"
+      }`}
+    >
+      {label}
+    </a>
+  ))}
+
+</nav>
 
     <a
       href="#contact"
