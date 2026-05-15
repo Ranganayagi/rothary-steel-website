@@ -457,28 +457,28 @@ Message: ${formData.message}`
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
-                className="rounded-xl p-4 text-black"
+                className="rounded-xl p-4 text-black bg-white border-2 border-gray-300 outline-none focus:border-[#d4af37] placeholder:text-gray-500"
                 placeholder="Name"
               />
               <input
                 name="company"
                 value={formData.company}
                 onChange={handleChange}
-                className="rounded-xl p-4 text-black"
+                className="rounded-xl p-4 text-black bg-white border-2 border-gray-300 outline-none focus:border-[#d4af37]"
                 placeholder="Company"
               />
               <input
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                className="rounded-xl p-4 text-black"
+                className="rounded-xl p-4 text-black bg-white border-2 border-gray-300 outline-none focus:border-[#d4af37]"
                 placeholder="Email"
               />
               <input
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
-                className="rounded-xl p-4 text-black"
+                className="rounded-xl p-4 text-black bg-white border-2 border-gray-300 outline-none focus:border-[#d4af37]"
                 placeholder="Phone"
               />
 
@@ -486,7 +486,7 @@ Message: ${formData.message}`
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
-                className="md:col-span-2 rounded-xl p-4 text-black"
+                className="md:col-span-2 rounded-xl p-4 text-black bg-white border-2 border-gray-300 outline-none focus:border-[#d4af37]"
                 rows={5}
                 placeholder="Message / Type of work needed"
               ></textarea>
@@ -514,23 +514,43 @@ Message: ${formData.message}`
           Teluk Intan, Perak | Steel Fabrication, Welding & Structural Works
         </p>
 
-        <div className="flex justify-center gap-4 mt-4 text-sm font-bold">
-          <a href="https://www.facebook.com/share/1BHgkLpX6h/" target="_blank">
-            Facebook
-          </a>
-          <a
-            href="https://www.instagram.com/rotharysteeltechengineering"
-            target="_blank"
-          >
-            Instagram
-          </a>
-          <a
-            href="https://www.tiktok.com/@rotharysteeltechengineer"
-            target="_blank"
-          >
-            TikTok
-          </a>
-        </div>
+        <div className="flex justify-center gap-5 mt-4">
+  <a
+    href="https://www.facebook.com/share/1BHgkLpX6h/"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <img
+      src="/facebook.png"
+      alt="Facebook"
+      className="w-8 h-8 hover:scale-110 transition"
+    />
+  </a>
+
+  <a
+    href="https://www.instagram.com/rotharysteeltechengineering"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <img
+      src="/instagram.png"
+      alt="Instagram"
+      className="w-8 h-8 hover:scale-110 transition"
+    />
+  </a>
+
+  <a
+    href="https://www.tiktok.com/@rotharysteeltechengineer"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <img
+      src="/tiktok.png"
+      alt="TikTok"
+      className="w-8 h-8 hover:scale-110 transition"
+    />
+  </a>
+</div>
 
         <p className="text-sm mt-4">
           © 2026 Rothary Steel Tech Engineering. All Rights Reserved.
