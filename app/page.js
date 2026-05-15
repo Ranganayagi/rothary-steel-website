@@ -146,9 +146,6 @@ export default function Home() {
 
         <div className="relative max-w-7xl mx-auto px-5 md:px-6 py-16 w-full grid lg:grid-cols-2 gap-10 items-center">
           <div>
-            <p className="inline-block px-5 py-2 rounded-full border border-[#d4af37]/50 text-[#f5d76e] text-sm font-bold mb-6">
-              STEEL FABRICATION & ENGINEERING SOLUTIONS
-            </p>
 
             <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black text-white leading-tight">
               BUILT STRONG.
