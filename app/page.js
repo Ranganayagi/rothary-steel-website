@@ -464,21 +464,21 @@ Message: ${formData.message}`
                 name="company"
                 value={formData.company}
                 onChange={handleChange}
-                className="rounded-xl p-4 text-black bg-white border-2 border-gray-300 outline-none focus:border-[#d4af37]"
+                className="rounded-xl p-4 text-black bg-white border-2 border-gray-300 outline-none focus:border-[#d4af37] placeholder:text-gray-500"
                 placeholder="Company"
               />
               <input
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                className="rounded-xl p-4 text-black bg-white border-2 border-gray-300 outline-none focus:border-[#d4af37]"
+                className="rounded-xl p-4 text-black bg-white border-2 border-gray-300 outline-none focus:border-[#d4af37] placeholder:text-gray-500"
                 placeholder="Email"
               />
               <input
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
-                className="rounded-xl p-4 text-black bg-white border-2 border-gray-300 outline-none focus:border-[#d4af37]"
+                className="rounded-xl p-4 text-black bg-white border-2 border-gray-300 outline-none focus:border-[#d4af37] placeholder:text-gray-500"
                 placeholder="Phone"
               />
 
@@ -486,7 +486,7 @@ Message: ${formData.message}`
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
-                className="md:col-span-2 rounded-xl p-4 text-black bg-white border-2 border-gray-300 outline-none focus:border-[#d4af37]"
+                className="md:col-span-2 rounded-xl p-4 text-black bg-white border-2 border-gray-300 outline-none focus:border-[#d4af37] placeholder:text-gray-500"
                 rows={5}
                 placeholder="Message / Type of work needed"
               ></textarea>
@@ -564,7 +564,7 @@ Message: ${formData.message}`
         rel="noopener noreferrer"
         className="fixed bottom-5 right-5 z-50 hover:scale-110 transition-transform duration-300"
       >
-        <img src="/whatsappicon.png" alt="WhatsApp" className="w-14 h-14" />
+        <img src="/whatsappicon.png" alt="WhatsApp" className="w-20 h-20" />
       </a>
     </main>
   );
