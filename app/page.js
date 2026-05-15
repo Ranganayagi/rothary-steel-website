@@ -449,12 +449,12 @@ export default function Home() {
         href="https://wa.me/601136023592"
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-5 right-5 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-2xl z-50 transition"
+        className="fixed bottom-5 right-5 z-50 hover:scale-110 transition-transform duration-300"
       >
         <img
           src="/whatsappicon.png"
           alt="WhatsApp"
-          className="w-7 h-7"
+          className="w-14 h-14"
         />
       </a>
     </main>
