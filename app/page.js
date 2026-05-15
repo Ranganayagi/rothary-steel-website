@@ -5,6 +5,28 @@ import { useState } from "react";
 export default function Home() {
   const [active, setActive] = useState("home");
 
+  const [formData, setFormData] = useState({
+    name: "",
+    company: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const whatsappMessage = encodeURIComponent(
+    `Hello Rothary Steel Tech Engineering, I would like to request a quotation.
+
+Name: ${formData.name}
+Company: ${formData.company}
+Email: ${formData.email}
+Phone: ${formData.phone}
+Message: ${formData.message}`
+  );
+
   const services = [
     {
       title: "Steel Fabrication",
@@ -101,7 +123,7 @@ export default function Home() {
             </div>
           </div>
 
-          <nav className="flex flex-wrap justify-center items-center gap-2">
+          <nav className="flex flex-wrap justify-center items-center gap-3 sm:gap-4 lg:gap-2 px-2">
             {[
               ["home", "HOME"],
               ["about", "ABOUT"],
@@ -113,7 +135,7 @@ export default function Home() {
                 key={id}
                 href={`#${id}`}
                 onClick={() => setActive(id)}
-                className={`px-4 py-2 rounded-full text-xs lg:text-sm font-bold transition ${
+                className={`px-4 py-2 rounded-full text-xs lg:text-sm font-bold tracking-wide transition ${
                   active === id
                     ? "bg-[#d4af37] text-black"
                     : "text-[#f5d76e] hover:bg-white/10 hover:text-white"
@@ -137,30 +159,26 @@ export default function Home() {
       <section
         id="home"
         className="relative min-h-[85vh] flex items-center bg-cover bg-center"
-        style={{
-          backgroundImage:
-            "url('/image1.jpg')",
-        }}
+        style={{ backgroundImage: "url('/image1.jpg')" }}
       >
         <div className="absolute inset-0 bg-[#06142b]/85"></div>
 
         <div className="relative max-w-7xl mx-auto px-5 md:px-6 py-16 w-full grid lg:grid-cols-2 gap-10 items-center">
           <div>
-
             <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black text-white leading-tight">
               BUILT STRONG.
               <br />
               BUILT RIGHT.
             </h2>
 
-            <p className="mt-6 text-xl md:text-2xl text-[#f5d76e] font-semibold italic">
-              Precision in Every Structure
-            </p>
-
             <p className="mt-6 text-lg md:text-xl text-gray-200 leading-relaxed max-w-2xl">
               Rothary Steel Tech Engineering provides quality steel fabrication,
               welding, structural works, awnings, gates, safety grills and metal
               engineering solutions with reliability and professionalism.
+            </p>
+
+            <p className="mt-4 text-[#f5d76e] font-semibold">
+              Serving Teluk Intan, Perak and nearby areas.
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
@@ -366,7 +384,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CONTACT */}
+       {/* CONTACT */}
       <section id="contact" className="py-16 md:py-20 px-5 md:px-6 bg-white">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
           <div>
@@ -375,9 +393,13 @@ export default function Home() {
             </h2>
             <div className="w-28 h-1 bg-[#d4af37] mt-5 mb-8"></div>
 
-            <p className="text-lg text-gray-700 leading-relaxed mb-8">
+            <p className="text-lg text-gray-700 leading-relaxed mb-4">
               Contact us for steel fabrication, welding, awning, safety grill,
               gate, stainless steel and structural work inquiries.
+            </p>
+
+            <p className="text-lg font-bold text-[#08245c] mb-8">
+              Service Area: Teluk Intan, Perak and nearby areas.
             </p>
 
             <div className="bg-gray-50 rounded-3xl shadow-lg p-6 md:p-8 text-lg text-[#06142b] space-y-5">
@@ -388,47 +410,96 @@ export default function Home() {
               <p>✉️ rotharysteeltechengineering@gmail.com</p>
               <p>📞 +60 11 3602 3592</p>
               <p>Reg No: KT0609406-H</p>
+
+              <div className="pt-4 border-t border-gray-300">
+                <p className="font-black mb-3">Follow Us:</p>
+                <div className="flex flex-wrap gap-3">
+                  <a
+                    href="https://www.facebook.com/share/1BHgkLpX6h/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-[#06142b] text-white px-4 py-2 rounded-full font-bold hover:bg-[#d4af37] hover:text-black transition"
+                  >
+                    Facebook
+                  </a>
+                  <a
+                    href="https://www.instagram.com/rotharysteeltechengineering"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-[#06142b] text-white px-4 py-2 rounded-full font-bold hover:bg-[#d4af37] hover:text-black transition"
+                  >
+                    Instagram
+                  </a>
+                  <a
+                    href="https://www.tiktok.com/@rotharysteeltechengineer"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-[#06142b] text-white px-4 py-2 rounded-full font-bold hover:bg-[#d4af37] hover:text-black transition"
+                  >
+                    TikTok
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
 
           <div className="bg-[#06142b] rounded-3xl p-6 md:p-8 shadow-2xl">
-            <h3 className="text-3xl font-black text-white text-center mb-8">
+            <h3 className="text-3xl font-black text-white text-center mb-3">
               SEND INQUIRY
             </h3>
 
-            <form className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <p className="text-center text-gray-300 mb-8">
+              Fill in the details and send directly through WhatsApp.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <input
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
                 className="rounded-xl p-4 text-black"
                 placeholder="Name"
               />
               <input
+                name="company"
+                value={formData.company}
+                onChange={handleChange}
                 className="rounded-xl p-4 text-black"
                 placeholder="Company"
               />
               <input
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
                 className="rounded-xl p-4 text-black"
                 placeholder="Email"
               />
               <input
+                name="phone"
+                value={formData.phone}
+                onChange={handleChange}
                 className="rounded-xl p-4 text-black"
                 placeholder="Phone"
               />
 
               <textarea
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
                 className="md:col-span-2 rounded-xl p-4 text-black"
                 rows={5}
-                placeholder="Message"
+                placeholder="Message / Type of work needed"
               ></textarea>
 
               <a
-                href="https://wa.me/601136023592?text=Hello%20Rothary%20Steel%20Tech%20Engineering%2C%20I%20would%20like%20to%20request%20a%20quotation."
+                href={`https://wa.me/601136023592?text=${whatsappMessage}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="md:col-span-2 bg-[#d4af37] hover:bg-[#f3d36b] text-black py-4 text-center font-black rounded-xl transition"
               >
-                WHATSAPP FOR QUOTATION
+                SEND VIA WHATSAPP
               </a>
-            </form>
+            </div>
           </div>
         </div>
       </section>
@@ -439,6 +510,28 @@ export default function Home() {
         <p className="italic text-[#f5d76e] mt-1">
           Precision in Every Structure
         </p>
+        <p className="text-sm mt-2">
+          Teluk Intan, Perak | Steel Fabrication, Welding & Structural Works
+        </p>
+
+        <div className="flex justify-center gap-4 mt-4 text-sm font-bold">
+          <a href="https://www.facebook.com/share/1BHgkLpX6h/" target="_blank">
+            Facebook
+          </a>
+          <a
+            href="https://www.instagram.com/rotharysteeltechengineering"
+            target="_blank"
+          >
+            Instagram
+          </a>
+          <a
+            href="https://www.tiktok.com/@rotharysteeltechengineer"
+            target="_blank"
+          >
+            TikTok
+          </a>
+        </div>
+
         <p className="text-sm mt-4">
           © 2026 Rothary Steel Tech Engineering. All Rights Reserved.
         </p>
@@ -451,11 +544,7 @@ export default function Home() {
         rel="noopener noreferrer"
         className="fixed bottom-5 right-5 z-50 hover:scale-110 transition-transform duration-300"
       >
-        <img
-          src="/whatsappicon.png"
-          alt="WhatsApp"
-          className="w-14 h-14"
-        />
+        <img src="/whatsappicon.png" alt="WhatsApp" className="w-14 h-14" />
       </a>
     </main>
   );
