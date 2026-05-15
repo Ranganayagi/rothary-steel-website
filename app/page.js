@@ -65,15 +65,15 @@ export default function Home() {
   const projects = [
     {
       title: "Steel Structure Work",
-      img: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122",
+      img: "/image1.jpg",
     },
     {
       title: "Awning & Roof Extension",
-      img: "https://images.unsplash.com/photo-1504307651254-35680f356dfd",
+      img: "/image3.jpg",
     },
     {
       title: "Welding & Fabrication",
-      img: "https://images.unsplash.com/photo-1581092160562-40aa08e78837",
+      img: "/image2.jpg",
     },
   ];
 
@@ -139,7 +139,7 @@ export default function Home() {
         className="relative min-h-[85vh] flex items-center bg-cover bg-center"
         style={{
           backgroundImage:
-            "url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122')",
+            "url('/image1.jpg')",
         }}
       >
         <div className="absolute inset-0 bg-[#06142b]/85"></div>
@@ -182,7 +182,7 @@ export default function Home() {
 
           <div className="hidden lg:block">
             <img
-              src="https://images.unsplash.com/photo-1581092160562-40aa08e78837"
+              src="/image2.jpg"
               alt="Steel welding work"
               className="w-full h-[480px] object-cover rounded-3xl border-4 border-[#d4af37]/40 shadow-2xl"
             />
@@ -194,7 +194,7 @@ export default function Home() {
       <section id="about" className="py-16 md:py-20 px-5 md:px-6 bg-white">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
           <img
-            src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789"
+            src="/image7.jpg"
             alt="Steel fabrication work"
             className="w-full h-72 md:h-[430px] object-cover rounded-3xl shadow-xl"
           />
@@ -452,7 +452,7 @@ export default function Home() {
         className="fixed bottom-5 right-5 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-2xl z-50 transition"
       >
         <img
-          src="https://cdn-icons-png.flaticon.com/512/733/733585.png"
+          src="/whatsappicon.png"
           alt="WhatsApp"
           className="w-7 h-7"
         />
