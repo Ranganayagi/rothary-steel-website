@@ -166,7 +166,7 @@ Message: ${formData.message}`
         <div className="relative max-w-7xl mx-auto px-5 md:px-6 py-16 w-full grid lg:grid-cols-2 gap-10 items-center">
           <div>
             <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black text-white leading-tight">
-              BUILT STRONG.
+              BUILT STRONG,
               <br />
               BUILT RIGHT.
             </h2>
@@ -178,7 +178,7 @@ Message: ${formData.message}`
             </p>
 
             <p className="mt-4 text-[#f5d76e] font-semibold">
-              Serving Teluk Intan, Perak and nearby areas.
+              Providing steel fabrication and engineering services across Malaysia
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
@@ -399,7 +399,7 @@ Message: ${formData.message}`
             </p>
 
             <p className="text-lg font-bold text-[#08245c] mb-8">
-              Service Area: Teluk Intan, Perak and nearby areas.
+              Service Area: Available across Malaysia
             </p>
 
             <div className="bg-gray-50 rounded-3xl shadow-lg p-6 md:p-8 text-lg text-[#06142b] space-y-5">
