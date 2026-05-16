@@ -385,124 +385,124 @@ Message: ${formData.message}`
       </section>
 
        {/* CONTACT */}
-      <section id="contact" className="py-16 md:py-20 px-5 md:px-6 bg-white">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <h2 className="text-4xl md:text-5xl font-black text-[#08245c] leading-tight">
-              GET A QUOTATION
-            </h2>
-            <div className="w-28 h-1 bg-[#d4af37] mt-5 mb-8"></div>
+<section id="contact" className="py-16 md:py-20 px-5 md:px-6 bg-gray-50">
+  <div className="max-w-5xl mx-auto">
+    <div className="text-center">
+      <h2 className="text-4xl md:text-5xl font-black text-[#08245c]">
+        GET A QUOTATION
+      </h2>
 
-            <p className="text-lg text-gray-700 leading-relaxed mb-4">
-              Contact us for steel fabrication, welding, awning, safety grill,
-              gate, stainless steel and structural work inquiries.
-            </p>
+      <div className="w-28 h-1 bg-[#d4af37] mx-auto mt-5 mb-8"></div>
 
-            <p className="text-lg font-bold text-[#08245c] mb-8">
-              Service Area: Available across Malaysia
-            </p>
+      <p className="text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto">
+        Contact us for steel fabrication, welding, awning, structural steel,
+        safety grill, stainless steel and custom metal work services across
+        Malaysia.
+      </p>
+    </div>
 
-            <div className="bg-gray-50 rounded-3xl shadow-lg p-6 md:p-8 text-lg text-[#06142b] space-y-5">
-              <p>
-                📍 Lot 4337, Batu 6, Jalan Maharajalela, Kampung Sri Jaya,
-                36000 Teluk Intan, Perak.
-              </p>
-              <p>✉️ rotharysteeltechengineering@gmail.com</p>
-              <p>📞 +60 11 3602 3592</p>
-              <p>Reg No: KT0609406-H</p>
+    {/* PROJECT PREVIEW IMAGES */}
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
+      <img
+        src="/image1.jpg"
+        alt="Project"
+        className="h-40 w-full object-cover rounded-2xl shadow-lg"
+      />
+      <img
+        src="/image2.jpg"
+        alt="Project"
+        className="h-40 w-full object-cover rounded-2xl shadow-lg"
+      />
+      <img
+        src="/image3.jpg"
+        alt="Project"
+        className="h-40 w-full object-cover rounded-2xl shadow-lg"
+      />
+      <img
+        src="/image4.jpg"
+        alt="Project"
+        className="h-40 w-full object-cover rounded-2xl shadow-lg"
+      />
+    </div>
 
-              <div className="pt-4 border-t border-gray-300">
-                <p className="font-black mb-3">Follow Us:</p>
-                <div className="flex flex-wrap gap-3">
-                  <a
-                    href="https://www.facebook.com/share/1BHgkLpX6h/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-[#06142b] text-white px-4 py-2 rounded-full font-bold hover:bg-[#d4af37] hover:text-black transition"
-                  >
-                    Facebook
-                  </a>
-                  <a
-                    href="https://www.instagram.com/rotharysteeltechengineering"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-[#06142b] text-white px-4 py-2 rounded-full font-bold hover:bg-[#d4af37] hover:text-black transition"
-                  >
-                    Instagram
-                  </a>
-                  <a
-                    href="https://www.tiktok.com/@rotharysteeltechengineer"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-[#06142b] text-white px-4 py-2 rounded-full font-bold hover:bg-[#d4af37] hover:text-black transition"
-                  >
-                    TikTok
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
+    {/* CONTACT CARD */}
+    <div className="mt-12 bg-[#06142b] rounded-3xl p-6 md:p-10 shadow-2xl">
+      <h3 className="text-3xl font-black text-white text-center mb-3">
+        SEND INQUIRY
+      </h3>
 
-          <div className="bg-[#06142b] rounded-3xl p-6 md:p-8 shadow-2xl">
-            <h3 className="text-3xl font-black text-white text-center mb-3">
-              SEND INQUIRY
-            </h3>
+      <p className="text-center text-gray-300 mb-8">
+        Fill in the details and send directly through WhatsApp.
+      </p>
 
-            <p className="text-center text-gray-300 mb-8">
-              Fill in the details and send directly through WhatsApp.
-            </p>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <input
+          name="name"
+          value={formData.name}
+          onChange={handleChange}
+          className="rounded-xl p-4 text-black bg-white border-2 border-gray-300 outline-none focus:border-[#d4af37] placeholder:text-gray-500"
+          placeholder="Name"
+        />
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <input
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                className="rounded-xl p-4 text-black bg-white border-2 border-gray-300 outline-none focus:border-[#d4af37] placeholder:text-gray-500"
-                placeholder="Name"
-              />
-              <input
-                name="company"
-                value={formData.company}
-                onChange={handleChange}
-                className="rounded-xl p-4 text-black bg-white border-2 border-gray-300 outline-none focus:border-[#d4af37] placeholder:text-gray-500"
-                placeholder="Company"
-              />
-              <input
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                className="rounded-xl p-4 text-black bg-white border-2 border-gray-300 outline-none focus:border-[#d4af37] placeholder:text-gray-500"
-                placeholder="Email"
-              />
-              <input
-                name="phone"
-                value={formData.phone}
-                onChange={handleChange}
-                className="rounded-xl p-4 text-black bg-white border-2 border-gray-300 outline-none focus:border-[#d4af37] placeholder:text-gray-500"
-                placeholder="Phone"
-              />
+        <input
+          name="company"
+          value={formData.company}
+          onChange={handleChange}
+          className="rounded-xl p-4 text-black bg-white border-2 border-gray-300 outline-none focus:border-[#d4af37] placeholder:text-gray-500"
+          placeholder="Company"
+        />
 
-              <textarea
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                className="md:col-span-2 rounded-xl p-4 text-black bg-white border-2 border-gray-300 outline-none focus:border-[#d4af37] placeholder:text-gray-500"
-                rows={5}
-                placeholder="Message / Type of work needed"
-              ></textarea>
+        <input
+          name="email"
+          value={formData.email}
+          onChange={handleChange}
+          className="rounded-xl p-4 text-black bg-white border-2 border-gray-300 outline-none focus:border-[#d4af37] placeholder:text-gray-500"
+          placeholder="Email"
+        />
 
-              <a
-                href={`https://wa.me/601136023592?text=${whatsappMessage}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="md:col-span-2 bg-[#d4af37] hover:bg-[#f3d36b] text-black py-4 text-center font-black rounded-xl transition"
-              >
-                SEND VIA WHATSAPP
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+        <input
+          name="phone"
+          value={formData.phone}
+          onChange={handleChange}
+          className="rounded-xl p-4 text-black bg-white border-2 border-gray-300 outline-none focus:border-[#d4af37] placeholder:text-gray-500"
+          placeholder="Phone"
+        />
+
+        <textarea
+          name="message"
+          value={formData.message}
+          onChange={handleChange}
+          className="md:col-span-2 rounded-xl p-4 text-black bg-white border-2 border-gray-300 outline-none focus:border-[#d4af37] placeholder:text-gray-500"
+          rows={5}
+          placeholder="Message / Type of work needed"
+        ></textarea>
+
+        <a
+          href={`https://wa.me/601136023592?text=${whatsappMessage}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="md:col-span-2 bg-[#d4af37] hover:bg-[#f3d36b] text-black py-4 text-center font-black rounded-xl transition"
+        >
+          SEND VIA WHATSAPP
+        </a>
+      </div>
+
+      {/* COMPANY INFO */}
+      <div className="mt-10 pt-8 border-t border-white/10 text-center text-gray-300 space-y-3">
+        <p>
+          📍 Lot 4337, Batu 6, Jalan Maharajalela, Kampung Sri Jaya,
+          36000 Teluk Intan, Perak.
+        </p>
+
+        <p>📞 +60 11 3602 3592</p>
+
+        <p>✉️ rotharysteeltechengineering@gmail.com</p>
+
+        <p>Service Area: Available across Malaysia.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* FOOTER */}
       <footer className="bg-[#06142b] text-white text-center py-8 px-5 border-t-4 border-[#d4af37]">
