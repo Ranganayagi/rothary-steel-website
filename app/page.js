@@ -517,7 +517,7 @@ Message: ${formData.message}`
           Precision in Every Structure
         </p>
         <p className="text-sm mt-2">
-          Teluk Intan, Perak | Steel Fabrication, Welding & Structural Works
+          Steel Fabrication, Welding & Structural Works Across Malaysia
         </p>
 
         <div className="flex justify-center gap-5 mt-4">
@@ -570,7 +570,7 @@ Message: ${formData.message}`
         rel="noopener noreferrer"
         className="fixed bottom-5 right-5 z-50 hover:scale-110 transition-transform duration-300"
       >
-        <img src="/whatsappicon.png" alt="WhatsApp" className="w-20 h-20" />
+        <img src="/whatsappicon.png" alt="WhatsApp" className="w-20 h-20 md:w-16 md:h-16" />
       </a>
     </main>
   );
