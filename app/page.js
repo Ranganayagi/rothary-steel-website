@@ -506,6 +506,12 @@ Message: ${formData.message}`
 
       {/* FOOTER */}
       <footer className="bg-[#06142b] text-white text-center py-8 px-5 border-t-4 border-[#d4af37]">
+
+      <img
+        src="/logo.png"
+        alt="Rothary Steel Tech Engineering Logo"
+        className="h-20 w-auto mx-auto mb-4"
+      />
         <h3 className="font-black text-lg">ROTHARY STEEL TECH ENGINEERING</h3>
         <p className="italic text-[#f5d76e] mt-1">
           Precision in Every Structure
