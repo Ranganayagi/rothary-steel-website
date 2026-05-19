@@ -37,49 +37,43 @@ Message: ${formData.message}`
     {
       title: "Welding Works",
       desc: "Reliable welding, repair and metal joining works.",
-      img: "/image2.jpg",
+      img: "/image2.jpeg",
       icon: "🔥",
     },
     {
       title: "Awning & Roofing",
       desc: "ACP, PU metal awning, C roof and roof extension works.",
-      img: "/image3.jpg",
+      img: "/image3.jpeg",
       icon: "🏠",
     },
     {
       title: "Main Gate",
       desc: "Custom steel gates for homes, shops and commercial properties.",
-      img: "/image4.jpg",
+      img: "/image4.jpeg",
       icon: "🚪",
     },
     {
       title: "Safety Grill & Door",
       desc: "Strong safety grills and safety doors with durable finishing.",
-      img: "/image5.jpg",
+      img: "/image5.jpeg",
       icon: "🔒",
     },
     {
       title: "Structural Steel Work",
       desc: "Steel frames, structures and heavy-duty fabrication works.",
-      img: "/image1.jpg",
+      img: "/image9.jpeg",
       icon: "🏭",
     },
     {
       title: "Stainless Steel Work",
       desc: "Stainless steel railings, gates, frames and custom works.",
-      img: "/image6.jpg",
+      img: "/image6.jpeg",
       icon: "⚙️",
-    },
-    {
-      title: "Machinery Maintenance",
-      desc: "Machinery repair, servicing and maintenance support.",
-      img: "/image7.jpg",
-      icon: "🔧",
     },
     {
       title: "Custom Metal Works",
       desc: "Iron works, roro bin repair and other custom metal solutions.",
-      img: "/image8.jpg",
+      img: "/image8.jpeg",
       icon: "🛠️",
     },
   ];
@@ -87,15 +81,15 @@ Message: ${formData.message}`
   const projects = [
     {
       title: "Steel Structure Work",
-      img: "/image1.jpg",
+      img: "/image9.jpeg",
     },
     {
       title: "Awning & Roof Extension",
-      img: "/image3.jpg",
+      img: "/image3.jpeg",
     },
     {
       title: "Welding & Fabrication",
-      img: "/image2.jpg",
+      img: "/image10.jpeg",
     },
   ];
 
