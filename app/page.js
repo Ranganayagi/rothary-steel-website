@@ -570,7 +570,7 @@ Message: ${formData.message}`
         rel="noopener noreferrer"
         className="fixed bottom-5 right-5 z-50 hover:scale-110 transition-transform duration-300"
       >
-        <img src="/whatsappicon.png" alt="WhatsApp" className="w-20 h-20 md:w-16 md:h-16" />
+        <img src="/whatsappicon.png" alt="WhatsApp" className="w-20 h-20" />
       </a>
     </main>
   );
