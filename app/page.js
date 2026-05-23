@@ -30,70 +30,70 @@ Message: ${formData.message}`
   );
 
   const services = [
-    {
-      title: "Steel Fabrication",
-      desc: "Custom steel fabrication for residential, commercial and industrial needs.",
-      img: "/image1.jpg",
-      icon: "🏗️",
-    },
-    {
-      title: "Welding Works",
-      desc: "Reliable welding, repair and metal joining works.",
-      img: "/image2.jpg",
-      icon: "🔥",
-    },
-    {
-      title: "Awning & Roofing",
-      desc: "ACP, PU metal awning, C roof and roof extension works.",
-      img: "/image3.jpg",
-      icon: "🏠",
-    },
-    {
-      title: "Main Gate",
-      desc: "Custom steel gates for homes, shops and commercial properties.",
-      img: "/image4.jpg",
-      icon: "🚪",
-    },
-    {
-      title: "Safety Grill & Door",
-      desc: "Strong safety grills and safety doors with durable finishing.",
-      img: "/image5.jpg",
-      icon: "🔒",
-    },
-    {
-      title: "Structural Steel Work",
-      desc: "Steel frames, structures and heavy-duty fabrication works.",
-      img: "/image9.jpg",
-      icon: "🏭",
-    },
-    {
-      title: "Stainless Steel Work",
-      desc: "Stainless steel railings, gates, frames and custom works.",
-      img: "/image6.jpg",
-      icon: "⚙️",
-    },
-    {
-      title: "Custom Metal Works",
-      desc: "Iron works, roro bin repair and other custom metal solutions.",
-      img: "/image8.jpg",
-      icon: "🛠️",
-    },
-  ];
+  {
+    title: "Steel Fabrication",
+    desc: "Custom steel fabrication for residential, commercial and industrial needs.",
+    img: "/image2.jpg",
+    icon: "🏗️",
+  },
+  {
+    title: "Welding Works",
+    desc: "Reliable welding, repair and metal joining works.",
+    img: "/image10.jpg",
+    icon: "🔥",
+  },
+  {
+    title: "Awning & Roofing",
+    desc: "ACP, PU metal awning, C roof and roof extension works.",
+    img: "/image14.jpg",
+    icon: "🏠",
+  },
+  {
+    title: "Main Gate",
+    desc: "Custom steel gates for homes, shops and commercial properties.",
+    img: "/image4.jpg",
+    icon: "🚪",
+  },
+  {
+    title: "Safety Grill & Door",
+    desc: "Strong safety grills and safety doors with durable finishing.",
+    img: "/image5.jpg",
+    icon: "🔒",
+  },
+  {
+    title: "Structural Steel Work",
+    desc: "Steel frames, structures and heavy-duty fabrication works.",
+    img: "/image9.jpg",
+    icon: "🏭",
+  },
+  {
+    title: "Stainless Steel Work",
+    desc: "Stainless steel railings, gates, frames and custom works.",
+    img: "/image6.jpg",
+    icon: "⚙️",
+  },
+  {
+    title: "Custom Metal Works",
+    desc: "Iron works, roro bin repair and other custom metal solutions.",
+    img: "/image8.jpg",
+    icon: "🛠️",
+  },
+];
 
   const projects = [
-    {
-      title: "Steel Structure Work",
-      img: "/image9.jpg",
-    },
-    {
-      title: "Awning & Roof Extension",
-      img: "/image3.jpg",
-    },
-    {
-      title: "Welding & Fabrication",
-      img: "/image10.jpg",
-    },
-  ];
+  {
+    title: "Premium Gate Work",
+    img: "/image13.jpg",
+  },
+  {
+    title: "Stainless Steel Safety Door",
+    img: "/image18.jpg",
+  },
+  {
+    title: "Completed Fence Work",
+    img: "/image11.jpg",
+  },
+];
 
   return (
     <main className="min-h-screen bg-white text-[#06142b]">
@@ -200,7 +200,7 @@ Message: ${formData.message}`
 
           <div className="hidden lg:block">
             <img
-              src="/image2.jpg"
+              src="/image19.jpg"
               alt="Steel welding work"
               className="w-full h-[480px] object-cover object-center rounded-3xl border-4 border-[#d4af37]/40 shadow-2xl"
             />
@@ -389,7 +389,7 @@ Message: ${formData.message}`
 
           {/* PROJECT PREVIEW IMAGES */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
-            {["/image1.jpg", "/image2.jpg", "/image3.jpg", "/image4.jpg"].map(
+            {["/image12.jpg", "/image15.jpg", "/image16.jpg", "/image20.jpg"].map(
               (img, index) => (
                 <div
                   key={index}
