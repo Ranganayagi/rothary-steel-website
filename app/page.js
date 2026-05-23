@@ -120,7 +120,7 @@ Message: ${formData.message}`
       : "bg-transparent"
   }`}
 >
-  <div className="max-w-7xl mx-auto px-4 md:px-6 py-3 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+  <div className="max-w-7xl mx-auto px-4 md:px-6 py-2 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-2 lg:gap-4">
 
     <div className="flex items-center justify-center lg:justify-start gap-3">
       <img
@@ -177,7 +177,7 @@ Message: ${formData.message}`
       {/* HERO */}
       <section
         id="home"
-        className="relative min-h-[88vh] pt-28 flex items-center bg-cover bg-center"
+        className="relative min-h-screen pt-64 sm:pt-56 lg:pt-28 flex items-center bg-cover bg-center"
         style={{ backgroundImage: "url('/image1.jpg')" }}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-[#06142b]/95 via-[#06142b]/85 to-black/70"></div>
