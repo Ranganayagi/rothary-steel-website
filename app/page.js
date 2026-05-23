@@ -1,9 +1,24 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Home() {
   const [active, setActive] = useState("home");
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+  const handleScroll = () => {
+    if (window.scrollY > 80) {
+      setScrolled(true);
+    } else {
+      setScrolled(false);
+    }
+  };
+
+  window.addEventListener("scroll", handleScroll);
+
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
 
   const [formData, setFormData] = useState({
     name: "",
@@ -98,63 +113,71 @@ Message: ${formData.message}`
   return (
     <main className="min-h-screen bg-white text-[#06142b]">
       {/* NAVBAR */}
-      <header className="sticky top-0 z-50 bg-[#06142b] border-b border-[#d4af37]/40 shadow-xl">
-        <div className="max-w-7xl mx-auto px-4 md:px-6 py-3 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
-          <div className="flex items-center justify-center lg:justify-start gap-3">
-            <img
-              src="/logo.png"
-              alt="Rothary Steel Tech Engineering Logo"
-              className="h-14 sm:h-16 lg:h-20 w-auto object-contain"
-            />
+      <header
+  className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
+    scrolled
+      ? "bg-[#06142b]/95 backdrop-blur-md shadow-xl border-b border-[#d4af37]/30"
+      : "bg-transparent"
+  }`}
+>
+  <div className="max-w-7xl mx-auto px-4 md:px-6 py-3 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
 
-            <div className="text-center lg:text-left">
-              <h1 className="text-[#f8e08b] text-base sm:text-lg lg:text-2xl font-black tracking-wide leading-tight">
-                ROTHARY STEEL TECH
-                <br />
-                ENGINEERING
-              </h1>
-              <p className="text-white/90 text-xs sm:text-sm italic tracking-wide mt-1">
-                Precision in Every Structure
-              </p>
-            </div>
-          </div>
+    <div className="flex items-center justify-center lg:justify-start gap-3">
+      <img
+        src="/logo.png"
+        alt="Rothary Steel Tech Engineering Logo"
+        className="h-14 sm:h-16 lg:h-20 w-auto object-contain"
+      />
 
-          <nav className="flex flex-wrap justify-center items-center gap-3 sm:gap-4 lg:gap-3 px-2">
-            {[
-              ["home", "HOME"],
-              ["about", "ABOUT"],
-              ["services", "SERVICES"],
-              ["projects", "PROJECTS"],
-              ["contact", "CONTACT"],
-            ].map(([id, label]) => (
-              <a
-                key={id}
-                href={`#${id}`}
-                onClick={() => setActive(id)}
-                className={`px-4 py-2 rounded-full text-xs lg:text-sm font-bold tracking-wide transition ${
-                  active === id
-                    ? "bg-[#d4af37] text-black"
-                    : "text-[#f5d76e] hover:bg-white/10 hover:text-white"
-                }`}
-              >
-                {label}
-              </a>
-            ))}
-          </nav>
+      <div className="text-center lg:text-left">
+        <h1 className="text-[#f8e08b] text-base sm:text-lg lg:text-2xl font-black tracking-wide leading-tight">
+          ROTHARY STEEL TECH
+          <br />
+          ENGINEERING
+        </h1>
 
-          <a
-            href="#contact"
-            className="w-full lg:w-auto text-center bg-[#d4af37] hover:bg-[#f3d36b] text-black px-6 py-3 font-black rounded-full transition shadow-lg"
-          >
-            GET QUOTE
-          </a>
-        </div>
-      </header>
+        <p className="text-white/90 text-xs sm:text-sm italic tracking-wide mt-1">
+          Precision in Every Structure
+        </p>
+      </div>
+    </div>
+
+    <nav className="flex flex-wrap justify-center items-center gap-4 sm:gap-5 lg:gap-6 px-2">
+      {[
+        ["home", "HOME"],
+        ["about", "ABOUT"],
+        ["services", "SERVICES"],
+        ["projects", "PROJECTS"],
+        ["contact", "CONTACT"],
+      ].map(([id, label]) => (
+        <a
+          key={id}
+          href={`#${id}`}
+          onClick={() => setActive(id)}
+          className={`px-4 py-2 rounded-full text-xs lg:text-sm font-bold tracking-wide transition-all duration-300 ${
+            active === id
+              ? "bg-[#d4af37] text-black"
+              : "text-[#f5d76e] hover:bg-white/10 hover:text-white"
+          }`}
+        >
+          {label}
+        </a>
+      ))}
+    </nav>
+
+    <a
+      href="#contact"
+      className="w-full lg:w-auto text-center bg-[#d4af37] hover:bg-[#f3d36b] text-black px-6 py-3 font-black rounded-full transition shadow-lg"
+    >
+      GET QUOTE
+    </a>
+  </div>
+</header>
 
       {/* HERO */}
       <section
         id="home"
-        className="relative min-h-[88vh] flex items-center bg-cover bg-center"
+        className="relative min-h-[88vh] pt-28 flex items-center bg-cover bg-center"
         style={{ backgroundImage: "url('/image1.jpg')" }}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-[#06142b]/95 via-[#06142b]/85 to-black/70"></div>
