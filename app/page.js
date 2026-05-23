@@ -563,18 +563,20 @@ Message: ${formData.message}`
       </footer>
 
       {/* FLOATING WHATSAPP BUTTON */}
-      <a
-        href="https://wa.me/601136023592"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="fixed bottom-5 right-5 z-50 hover:scale-110 transition-transform duration-300"
-      >
-        <img
-          src="/whatsappicon.png"
-          alt="WhatsApp"
-          className="w-20 h-20 object-contain"
-        />
-      </a>
+<a
+  href={`https://wa.me/601136023592?text=${encodeURIComponent(
+    "Hi Rothary Steel Tech Engineering, I would like to request a quotation."
+  )}`}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="fixed bottom-5 right-5 z-50 hover:scale-110 transition-transform duration-300"
+>
+  <img
+    src="/whatsappicon.png"
+    alt="WhatsApp"
+    className="w-20 h-20 object-contain"
+  />
+</a>
     </main>
   );
 }
