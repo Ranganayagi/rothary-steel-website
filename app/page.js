@@ -6,20 +6,6 @@ export default function Home() {
   const [active, setActive] = useState("home");
   const [scrolled, setScrolled] = useState(false);
 
-  useEffect(() => {
-  const handleScroll = () => {
-    if (window.scrollY > 80) {
-      setScrolled(true);
-    } else {
-      setScrolled(false);
-    }
-  };
-
-  window.addEventListener("scroll", handleScroll);
-
-  return () => window.removeEventListener("scroll", handleScroll);
-}, []);
-
   const [formData, setFormData] = useState({
     name: "",
     company: "",
@@ -28,6 +14,12 @@ export default function Home() {
     phone: "",
     message: "",
   });
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 80);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -44,148 +36,102 @@ Phone: ${formData.phone}
 Message: ${formData.message}`
   );
 
-  const services = [
-  {
-    title: "Steel Fabrication",
-    desc: "Custom steel fabrication for residential, commercial and industrial needs.",
-    img: "/image2.jpg",
-    icon: "🏗️",
-  },
-  {
-    title: "Welding Works",
-    desc: "Reliable welding, repair and metal joining works.",
-    img: "/image10.jpg",
-    icon: "🔥",
-  },
-  {
-    title: "Awning & Roofing",
-    desc: "ACP, PU metal awning, C roof and roof extension works.",
-    img: "/image14.jpg",
-    icon: "🏠",
-  },
-  {
-    title: "Main Gate",
-    desc: "Custom steel gates for homes, shops and commercial properties.",
-    img: "/image4.jpg",
-    icon: "🚪",
-  },
-  {
-    title: "Safety Grill & Door",
-    desc: "Strong safety grills and safety doors with durable finishing.",
-    img: "/image5.jpg",
-    icon: "🔒",
-  },
-  {
-    title: "Structural Steel Work",
-    desc: "Steel frames, structures and heavy-duty fabrication works.",
-    img: "/image9.jpg",
-    icon: "🏭",
-  },
-  {
-    title: "Stainless Steel Work",
-    desc: "Stainless steel railings, gates, frames and custom works.",
-    img: "/image6.jpg",
-    icon: "⚙️",
-  },
-  {
-    title: "Custom Metal Works",
-    desc: "Iron works, roro bin repair and other custom metal solutions.",
-    img: "/image8.jpg",
-    icon: "🛠️",
-  },
+  const navItems = [
+  ["home", "HOME"],
+  ["about", "ABOUT"],
+  ["photos", "GALLERY"],
+  ["why", "WHY US"],
+  ["services", "SERVICES"],
+  ["contact", "CONTACT"],
 ];
+
+  const services = [
+    ["Steel Fabrication", "Custom steel fabrication for residential, commercial and industrial needs.", "/image2.jpg", "🏗️"],
+    ["Welding Works", "Reliable welding, repair and metal joining works.", "/image10.jpg", "🔥"],
+    ["Awning & Roofing", "ACP, PU metal awning, C roof and roof extension works.", "/image14.jpg", "🏠"],
+    ["Main Gate", "Custom steel gates for homes, shops and commercial properties.", "/image4.jpg", "🚪"],
+    ["Safety Grill & Door", "Strong safety grills and safety doors with durable finishing.", "/image5.jpg", "🔒"],
+    ["Structural Steel Work", "Steel frames, structures and heavy-duty fabrication works.", "/image9.jpg", "🏭"],
+    ["Stainless Steel Work", "Stainless steel railings, gates, frames and custom works.", "/image6.jpg", "⚙️"],
+    ["Custom Metal Works", "Iron works, roro bin repair and other custom metal solutions.", "/image8.jpg", "🛠️"],
+  ];
 
   const projects = [
-  {
-    title: "Premium Gate Work",
-    img: "/image13.jpg",
-  },
-  {
-    title: "Stainless Steel Safety Door",
-    img: "/image18.jpg",
-  },
-  {
-    title: "Completed Fence Work",
-    img: "/image11.jpg",
-  },
-];
+    ["Premium Gate Work", "/image13.jpg"],
+    ["Stainless Steel Safety Door", "/image18.jpg"],
+    ["Completed Fence Work", "/image11.jpg"],
+  ];
 
   return (
-    <main className="min-h-screen bg-white text-[#06142b]">
+    <main className="min-h-screen bg-white text-[#06142b] scroll-smooth">
       {/* NAVBAR */}
       <header
-  className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
-    scrolled
-      ? "bg-[#06142b]/95 backdrop-blur-md shadow-xl border-b border-[#d4af37]/30"
-      : "bg-transparent"
-  }`}
->
-  <div className="max-w-7xl mx-auto px-4 md:px-6 py-2 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-2 lg:gap-4">
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
+          scrolled
+            ? "bg-[#06142b]/95 backdrop-blur-md shadow-xl border-b border-[#d4af37]/30"
+            : "bg-[#06142b]/90 backdrop-blur-sm"
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-4 py-3">
+          <div className="flex items-center justify-center lg:justify-between gap-4">
+            <a href="#home" className="flex items-center gap-3">
+              <img
+                src="/logo.png"
+                alt="Rothary Steel Tech Engineering Logo"
+                className="h-14 sm:h-16 lg:h-20 w-auto object-contain"
+              />
 
-    <div className="flex items-center justify-center lg:justify-start gap-3">
-      <img
-        src="/logo.png"
-        alt="Rothary Steel Tech Engineering Logo"
-        className="h-14 sm:h-16 lg:h-20 w-auto object-contain"
-      />
+              <div>
+                <h1 className="text-[#f8e08b] text-sm sm:text-lg lg:text-2xl font-black tracking-wide leading-tight">
+                  ROTHARY STEEL TECH
+                  <br />
+                  ENGINEERING
+                </h1>
 
-      <div className="text-center lg:text-left">
-        <h1 className="text-[#f8e08b] text-base sm:text-lg lg:text-2xl font-black tracking-wide leading-tight">
-          ROTHARY STEEL TECH
-          <br />
-          ENGINEERING
-        </h1>
+                <p className="text-white/90 text-[11px] sm:text-sm italic tracking-wide">
+                  Precision in Every Structure
+                </p>
+              </div>
+            </a>
 
-        <p className="text-white/90 text-xs sm:text-sm italic tracking-wide mt-1">
-          Precision in Every Structure
-        </p>
-      </div>
-    </div>
+            <a
+              href="#contact"
+              className="hidden lg:block bg-[#d4af37] hover:bg-[#f3d36b] text-black px-6 py-3 font-black rounded-full transition shadow-lg"
+            >
+              GET QUOTE
+            </a>
+          </div>
 
-    <nav className="flex flex-wrap justify-center items-center gap-4 sm:gap-5 lg:gap-6 px-2">
-      {[
-        ["home", "HOME"],
-        ["about", "ABOUT"],
-        ["photos", "GALLERY"],
-        ["why", "WHY US"],
-        ["services", "SERVICES"],
-        ["contact", "CONTACT"],
-      ].map(([id, label]) => (
-        <a
-          key={id}
-          href={id === "photos" ? "/photos" : `#${id}`}
-          onClick={() => setActive(id)}
-          className={`px-4 py-2 rounded-full text-xs lg:text-sm font-bold tracking-wide transition-all duration-300 ${
-            active === id
-              ? "bg-[#d4af37] text-black"
-              : "text-[#f5d76e] hover:bg-white/10 hover:text-white"
-          }`}
-        >
-          {label}
-        </a>
-      ))}
-    </nav>
-
-    <a
-      href="#contact"
-      className="w-full lg:w-auto text-center bg-[#d4af37] hover:bg-[#f3d36b] text-black px-6 py-3 font-black rounded-full transition shadow-lg"
-    >
-      GET QUOTE
-    </a>
-  </div>
-</header>
+          <nav className="mt-3 flex overflow-x-auto lg:overflow-visible justify-start lg:justify-center gap-3 sm:gap-4 pb-2 lg:pb-0 no-scrollbar">
+            {navItems.map(([id, label]) => (
+              <a
+                key={id}
+                href={id === "photos" ? "/photos" : `#${id}`}
+                onClick={() => setActive(id)}
+                className={`shrink-0 px-4 py-2 rounded-full text-xs lg:text-sm font-bold tracking-wide transition-all duration-300 ${
+                  active === id
+                    ? "bg-[#d4af37] text-black"
+                    : "text-[#f5d76e] hover:bg-white/10 hover:text-white"
+                }`}
+              >
+                {label}
+              </a>
+            ))}
+          </nav>
+        </div>
+      </header>
 
       {/* HERO */}
       <section
         id="home"
-        className="relative min-h-screen pt-64 sm:pt-56 lg:pt-28 flex items-center bg-cover bg-center"
+        className="relative min-h-screen pt-44 sm:pt-48 lg:pt-40 flex items-center bg-cover bg-center"
         style={{ backgroundImage: "url('/image1.jpg')" }}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-[#06142b]/95 via-[#06142b]/85 to-black/70"></div>
 
-        <div className="relative max-w-7xl mx-auto px-5 md:px-6 py-16 w-full grid lg:grid-cols-2 gap-10 items-center">
+        <div className="relative max-w-7xl mx-auto px-5 md:px-6 py-12 w-full grid lg:grid-cols-2 gap-10 items-center">
           <div>
-            <p className="text-[#d4af37] font-black tracking-[0.3em] mb-4 text-sm">
+            <p className="text-[#d4af37] font-black tracking-[0.25em] mb-4 text-xs sm:text-sm">
               PREMIUM STEEL FABRICATION
             </p>
 
@@ -195,14 +141,14 @@ Message: ${formData.message}`
               BUILT RIGHT.
             </h2>
 
-            <p className="mt-6 text-lg md:text-xl text-gray-200 leading-relaxed max-w-2xl">
+            <p className="mt-6 text-base sm:text-lg md:text-xl text-gray-200 leading-relaxed max-w-2xl">
               Rothary Steel Tech Engineering provides quality steel fabrication,
               welding, structural works, awnings, gates, safety grills and metal
               engineering solutions with reliability and professionalism.
             </p>
 
             <p className="mt-4 text-[#f5d76e] font-semibold">
-              Providing steel fabrication and engineering services across Malaysia
+              Providing steel fabrication and engineering services across Malaysia.
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
@@ -226,19 +172,19 @@ Message: ${formData.message}`
             <img
               src="/image19.jpg"
               alt="Steel welding work"
-              className="w-full h-[480px] object-cover object-center rounded-3xl border-4 border-[#d4af37]/40 shadow-2xl"
+              className="w-full h-[480px] object-cover rounded-3xl border-4 border-[#d4af37]/40 shadow-2xl"
             />
           </div>
         </div>
       </section>
 
       {/* ABOUT */}
-      <section id="about" className="py-16 md:py-24 px-5 md:px-6 bg-white">
+      <section id="about" className="scroll-mt-36 py-16 md:py-24 px-5 md:px-6 bg-white">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
           <img
             src="/image7.jpg"
             alt="Steel fabrication work"
-            className="w-full h-80 md:h-[460px] object-cover object-center rounded-3xl shadow-xl"
+            className="w-full h-80 md:h-[460px] object-cover rounded-3xl shadow-xl"
           />
 
           <div>
@@ -275,9 +221,7 @@ Message: ${formData.message}`
                 OUR VISION
               </h3>
               <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
-                To become a leading and trusted steel fabrication and
-                engineering company known for quality, reliability, and
-                excellence.
+                To become a leading and trusted steel fabrication and engineering company known for quality, reliability, and excellence.
               </p>
             </div>
 
@@ -286,9 +230,7 @@ Message: ${formData.message}`
                 OUR MISSION
               </h3>
               <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
-                To deliver high-quality steel fabrication and engineering
-                solutions through skilled workmanship, reliable service, safety,
-                integrity and professionalism.
+                To deliver high-quality steel fabrication and engineering solutions through skilled workmanship, reliable service, safety, integrity and professionalism.
               </p>
             </div>
           </div>
@@ -296,38 +238,36 @@ Message: ${formData.message}`
       </section>
 
       {/* SERVICES */}
-      <section id="services" className="py-16 md:py-24 px-5 md:px-6 bg-gray-50">
+      <section id="services" className="scroll-mt-36 py-16 md:py-24 px-5 md:px-6 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-black text-center text-[#06142b] mb-4">
             OUR SERVICES
           </h2>
+
           <p className="text-center text-gray-600 text-lg max-w-3xl mx-auto mb-12">
-            Complete steel fabrication, welding and metal work solutions for
-            homes, businesses and industrial projects.
+            Complete steel fabrication, welding and metal work solutions for homes, businesses and industrial projects.
           </p>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => (
+            {services.map(([title, desc, img, icon], index) => (
               <div
                 key={index}
                 className="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-2 transition duration-500 border border-gray-200"
               >
                 <div className="h-72 w-full bg-gray-100 overflow-hidden">
                   <img
-                    src={service.img}
-                    alt={service.title}
-                    className="h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-110"
+                    src={img}
+                    alt={title}
+                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                 </div>
 
                 <div className="p-6">
-                  <div className="text-4xl mb-4">{service.icon}</div>
+                  <div className="text-4xl mb-4">{icon}</div>
                   <h3 className="text-xl md:text-2xl font-black text-[#06142b]">
-                    {service.title}
+                    {title}
                   </h3>
-                  <p className="mt-3 text-gray-600 leading-relaxed">
-                    {service.desc}
-                  </p>
+                  <p className="mt-3 text-gray-600 leading-relaxed">{desc}</p>
                 </div>
               </div>
             ))}
@@ -335,32 +275,31 @@ Message: ${formData.message}`
         </div>
       </section>
 
-      {/* PROJECTS */}
-      <section id="projects" className="py-16 md:py-24 px-5 md:px-6 bg-white">
+      {/* GALLERY / PROJECTS */}
+      <section id="projects" className="scroll-mt-36 py-16 md:py-24 px-5 md:px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-black text-center text-[#06142b] mb-4">
-            FEATURED WORKS
+            GALLERY
           </h2>
+
           <p className="text-center text-gray-600 text-lg mb-12">
             A sample of our steel, welding and fabrication work.
           </p>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {projects.map((project, index) => (
+            {projects.map(([title, img], index) => (
               <div
                 key={index}
                 className="group relative rounded-3xl overflow-hidden shadow-xl h-80 bg-gray-100"
               >
                 <img
-                  src={project.img}
-                  alt={project.title}
-                  className="h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-110"
+                  src={img}
+                  alt={title}
+                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent"></div>
                 <div className="absolute inset-x-0 bottom-0 p-6">
-                  <h4 className="text-xl font-black text-white">
-                    {project.title}
-                  </h4>
+                  <h4 className="text-xl font-black text-white">{title}</h4>
                 </div>
               </div>
             ))}
@@ -369,10 +308,7 @@ Message: ${formData.message}`
       </section>
 
       {/* WHY CHOOSE US */}
-      <section
-  id="why"
-  className="py-16 md:py-24 px-5 md:px-6 bg-[#082318] text-white"
->
+      <section id="why" className="scroll-mt-36 py-16 md:py-24 px-5 md:px-6 bg-[#06142b] text-white">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-black text-center mb-12">
             WHY CHOOSE US
@@ -398,7 +334,7 @@ Message: ${formData.message}`
       </section>
 
       {/* CONTACT */}
-      <section id="contact" className="py-16 md:py-24 px-5 md:px-6 bg-gray-50">
+      <section id="contact" className="scroll-mt-36 py-16 md:py-24 px-5 md:px-6 bg-gray-50">
         <div className="max-w-5xl mx-auto">
           <div className="text-center">
             <h2 className="text-4xl md:text-5xl font-black text-[#08245c]">
@@ -408,31 +344,23 @@ Message: ${formData.message}`
             <div className="w-28 h-1 bg-[#d4af37] mx-auto mt-5 mb-8"></div>
 
             <p className="text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto">
-              Contact us for steel fabrication, welding, awning, structural
-              steel, safety grill, stainless steel and custom metal work services
-              across Malaysia.
+              Contact us for steel fabrication, welding, awning, structural steel,
+              safety grill, stainless steel and custom metal work services across Malaysia.
             </p>
           </div>
 
-          {/* PROJECT PREVIEW IMAGES */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
-            {["/image12.jpg", "/image15.jpg", "/image16.jpg", "/image20.jpg"].map(
-              (img, index) => (
-                <div
-                  key={index}
-                  className="h-40 w-full bg-gray-100 rounded-2xl overflow-hidden shadow-lg"
-                >
-                  <img
-                    src={img}
-                    alt="Project"
-                    className="h-full w-full object-cover object-center hover:scale-110 transition duration-700"
-                  />
-                </div>
-              )
-            )}
+            {["/image12.jpg", "/image15.jpg", "/image16.jpg", "/image20.jpg"].map((img, index) => (
+              <div key={index} className="h-40 w-full bg-gray-100 rounded-2xl overflow-hidden shadow-lg">
+                <img
+                  src={img}
+                  alt="Project"
+                  className="h-full w-full object-cover hover:scale-110 transition duration-700"
+                />
+              </div>
+            ))}
           </div>
 
-          {/* CONTACT CARD */}
           <div className="mt-12 bg-[#06142b] rounded-3xl p-6 md:p-10 shadow-2xl">
             <h3 className="text-3xl font-black text-white text-center mb-3">
               SEND INQUIRY
@@ -443,37 +371,22 @@ Message: ${formData.message}`
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <input
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                className="rounded-xl p-4 text-black bg-white border-2 border-gray-300 outline-none focus:border-[#d4af37] placeholder:text-gray-500"
-                placeholder="Name"
-              />
-
-              <input
-                name="address"
-                value={formData.address}
-                onChange={handleChange}
-                className="rounded-xl p-4 text-black bg-white border-2 border-gray-300 outline-none focus:border-[#d4af37] placeholder:text-gray-500"
-                placeholder="Address"
-              />
-
-              <input
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                className="rounded-xl p-4 text-black bg-white border-2 border-gray-300 outline-none focus:border-[#d4af37] placeholder:text-gray-500"
-                placeholder="Email"
-              />
-
-              <input
-                name="phone"
-                value={formData.phone}
-                onChange={handleChange}
-                className="rounded-xl p-4 text-black bg-white border-2 border-gray-300 outline-none focus:border-[#d4af37] placeholder:text-gray-500"
-                placeholder="Phone"
-              />
+              {[
+                ["name", "Name"],
+                ["company", "Company Name"],
+                ["address", "Address"],
+                ["email", "Email"],
+                ["phone", "Phone"],
+              ].map(([name, placeholder]) => (
+                <input
+                  key={name}
+                  name={name}
+                  value={formData[name]}
+                  onChange={handleChange}
+                  className="rounded-xl p-4 text-black bg-white border-2 border-gray-300 outline-none focus:border-[#d4af37] placeholder:text-gray-500"
+                  placeholder={placeholder}
+                />
+              ))}
 
               <textarea
                 name="message"
@@ -494,111 +407,65 @@ Message: ${formData.message}`
               </a>
             </div>
 
-            {/* GOOGLE MAP */}
-<div className="mt-10 rounded-3xl overflow-hidden shadow-xl border border-white/10">
-  <iframe
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3980.339582749128!2d100.96669177497499!3d3.950229596023524!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cb415a2cfccc9d%3A0x2592c7950c1acf53!2sRothary%20Steel%20Tech%20Engineering!5e0!3m2!1sen!2smy!4v1779567714298!5m2!1sen!2smy"
-    width="100%"
-    height="350"
-    style={{ border: 0 }}
-    allowFullScreen=""
-    loading="lazy"
-    referrerPolicy="no-referrer-when-downgrade"
-    className="w-full"
-  ></iframe>
-</div>
+            <div className="mt-10 rounded-3xl overflow-hidden shadow-xl border border-white/10">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3980.339582749128!2d100.96669177497499!3d3.950229596023524!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cb415a2cfccc9d%3A0x2592c7950c1acf53!2sRothary%20Steel%20Tech%20Engineering!5e0!3m2!1sen!2smy!4v1779567714298!5m2!1sen!2smy"
+                width="100%"
+                height="350"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="w-full"
+              ></iframe>
+            </div>
 
-{/* COMPANY INFO */}
-<div className="mt-10 pt-8 border-t border-white/10 text-center text-gray-300 space-y-3">
-  <p>
-    📍 Lot 4337, Batu 6, Jalan Maharajalela, Kampung Sri Jaya,
-    36000 Teluk Intan, Perak.
-  </p>
-
-  <p>📞 +60 11 3602 3592</p>
-
-  <p>✉️ rotharysteeltechengineering@gmail.com</p>
-
-  <p>Service Area: Available across Malaysia.</p>
-</div>
+            <div className="mt-10 pt-8 border-t border-white/10 text-center text-gray-300 space-y-3">
+              <p>📍 Lot 4337, Batu 6, Jalan Maharajalela, Kampung Sri Jaya, 36000 Teluk Intan, Perak.</p>
+              <p>📞 +60 11 3602 3592</p>
+              <p>✉️ rotharysteeltechengineering@gmail.com</p>
+              <p>Service Area: Available across Malaysia.</p>
+            </div>
           </div>
         </div>
       </section>
 
       {/* FOOTER */}
       <footer className="bg-[#06142b] text-white text-center py-8 px-5 border-t-4 border-[#d4af37]">
-        <img
-          src="/logo.png"
-          alt="Rothary Steel Tech Engineering Logo"
-          className="h-20 w-auto mx-auto mb-4 object-contain"
-        />
+        <img src="/logo.png" alt="Logo" className="h-20 w-auto mx-auto mb-4 object-contain" />
 
         <h3 className="font-black text-lg">ROTHARY STEEL TECH ENGINEERING</h3>
-        <p className="italic text-[#f5d76e] mt-1">
-          Precision in Every Structure
-        </p>
-        <p className="text-sm mt-2">
-          Steel Fabrication, Welding & Structural Works Across Malaysia
-        </p>
+        <p className="italic text-[#f5d76e] mt-1">Precision in Every Structure</p>
+        <p className="text-sm mt-2">Steel Fabrication, Welding & Structural Works Across Malaysia</p>
 
         <div className="flex justify-center gap-5 mt-4">
-          <a
-            href="https://www.facebook.com/share/1BHgkLpX6h/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src="/facebook.png"
-              alt="Facebook"
-              className="w-9 h-9 hover:scale-110 transition object-contain"
-            />
+          <a href="https://www.facebook.com/share/1BHgkLpX6h/" target="_blank" rel="noopener noreferrer">
+            <img src="/facebook.png" alt="Facebook" className="w-9 h-9 hover:scale-110 transition object-contain" />
           </a>
 
-          <a
-            href="https://www.instagram.com/rotharysteeltechengineering"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src="/instagram.png"
-              alt="Instagram"
-              className="w-9 h-9 hover:scale-110 transition object-contain"
-            />
+          <a href="https://www.instagram.com/rotharysteeltechengineering" target="_blank" rel="noopener noreferrer">
+            <img src="/instagram.png" alt="Instagram" className="w-9 h-9 hover:scale-110 transition object-contain" />
           </a>
 
-          <a
-            href="https://www.tiktok.com/@rotharysteeltechengineer"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src="/tiktok.png"
-              alt="TikTok"
-              className="w-9 h-9 hover:scale-110 transition object-contain"
-            />
+          <a href="https://www.tiktok.com/@rotharysteeltechengineer" target="_blank" rel="noopener noreferrer">
+            <img src="/tiktok.png" alt="TikTok" className="w-9 h-9 hover:scale-110 transition object-contain" />
           </a>
         </div>
 
-        <p className="text-sm mt-4">
-          © 2026 Rothary Steel Tech Engineering. All Rights Reserved.
-        </p>
+        <p className="text-sm mt-4">© 2026 Rothary Steel Tech Engineering. All Rights Reserved.</p>
       </footer>
 
-      {/* FLOATING WHATSAPP BUTTON */}
-<a
-  href={`https://wa.me/601136023592?text=${encodeURIComponent(
-    "Hi Rothary Steel Tech Engineering, I would like to request a quotation."
-  )}`}
-  target="_blank"
-  rel="noopener noreferrer"
-  className="fixed bottom-5 right-5 z-50 hover:scale-110 transition-transform duration-300"
->
-  <img
-    src="/whatsappicon.png"
-    alt="WhatsApp"
-    className="w-20 h-20 object-contain"
-  />
-</a>
+      {/* FLOATING WHATSAPP */}
+      <a
+        href={`https://wa.me/601136023592?text=${encodeURIComponent(
+          "Hi Rothary Steel Tech Engineering, I would like to request a quotation."
+        )}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-5 right-5 z-50 hover:scale-110 transition-transform duration-300"
+      >
+        <img src="/whatsappicon.png" alt="WhatsApp" className="w-16 h-16 sm:w-20 sm:h-20 object-contain" />
+      </a>
     </main>
   );
 }
