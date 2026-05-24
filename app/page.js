@@ -146,8 +146,9 @@ Message: ${formData.message}`
       {[
         ["home", "HOME"],
         ["about", "ABOUT"],
+        ["gallery", "GALLERY"],
+        ["why", "WHY US"],
         ["services", "SERVICES"],
-        ["projects", "PROJECTS"],
         ["contact", "CONTACT"],
       ].map(([id, label]) => (
         <a
@@ -368,7 +369,10 @@ Message: ${formData.message}`
       </section>
 
       {/* PHOTO GALLERY */}
-<section className="py-16 md:py-24 px-5 md:px-6 bg-gray-100">
+<section
+  id="gallery"
+  className="py-16 md:py-24 px-5 md:px-6 bg-white"
+>
   <div className="max-w-7xl mx-auto">
     <h2 className="text-4xl md:text-5xl font-black text-center text-[#06142b] mb-4">
       PHOTO GALLERY
@@ -391,7 +395,7 @@ Message: ${formData.message}`
       ].map((img, index) => (
         <div
           key={index}
-          className="group overflow-hidden rounded-3xl shadow-xl bg-white"
+          className="group overflow-hidden rounded-3xl shadow-xl bg-gray-100"
         >
           <div className="h-56 md:h-64 overflow-hidden">
             <img
