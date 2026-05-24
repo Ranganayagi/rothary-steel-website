@@ -146,14 +146,14 @@ Message: ${formData.message}`
       {[
         ["home", "HOME"],
         ["about", "ABOUT"],
-        ["gallery", "GALLERY"],
+        ["photos", "GALLERY"],
         ["why", "WHY US"],
         ["services", "SERVICES"],
         ["contact", "CONTACT"],
       ].map(([id, label]) => (
         <a
           key={id}
-          href={`#${id}`}
+          href={id === "photos" ? "/photos" : `#${id}`}
           onClick={() => setActive(id)}
           className={`px-4 py-2 rounded-full text-xs lg:text-sm font-bold tracking-wide transition-all duration-300 ${
             active === id
