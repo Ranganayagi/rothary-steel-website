@@ -368,50 +368,11 @@ Message: ${formData.message}`
         </div>
       </section>
 
-      {/* PHOTO GALLERY */}
-<section
-  id="gallery"
-  className="py-16 md:py-24 px-5 md:px-6 bg-white"
->
-  <div className="max-w-7xl mx-auto">
-    <h2 className="text-4xl md:text-5xl font-black text-center text-[#06142b] mb-4">
-      PHOTO GALLERY
-    </h2>
-
-    <p className="text-center text-gray-600 text-lg mb-12">
-      Our latest steel fabrication, welding and engineering projects.
-    </p>
-
-    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
-      {[
-        "/image2.jpg",
-        "/image4.jpg",
-        "/image5.jpg",
-        "/image6.jpg",
-        "/image8.jpg",
-        "/image9.jpg",
-        "/image10.jpg",
-        "/image11.jpg",
-      ].map((img, index) => (
-        <div
-          key={index}
-          className="group overflow-hidden rounded-3xl shadow-xl bg-gray-100"
-        >
-          <div className="h-56 md:h-64 overflow-hidden">
-            <img
-              src={img}
-              alt="Rothary Steel Project"
-              className="w-full h-full object-cover object-center transition duration-700 group-hover:scale-110"
-            />
-          </div>
-        </div>
-      ))}
-    </div>
-  </div>
-</section>
-
       {/* WHY CHOOSE US */}
-      <section className="py-16 md:py-24 px-5 md:px-6 bg-[#082318] text-white">
+      <section
+  id="why"
+  className="py-16 md:py-24 px-5 md:px-6 bg-[#082318] text-white"
+>
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-black text-center mb-12">
             WHY CHOOSE US
