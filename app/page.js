@@ -37,13 +37,13 @@ Message: ${formData.message}`
   );
 
   const navItems = [
-  ["home", "HOME"],
-  ["about", "ABOUT"],
-  ["photos", "GALLERY"],
-  ["why", "WHY US"],
-  ["services", "SERVICES"],
-  ["contact", "CONTACT"],
-];
+    ["home", "HOME"],
+    ["about", "ABOUT"],
+    ["photos", "GALLERY"],
+    ["why", "WHY US"],
+    ["services", "SERVICES"],
+    ["contact", "CONTACT"],
+  ];
 
   const services = [
     ["Steel Fabrication", "Custom steel fabrication for residential, commercial and industrial needs.", "/image2.jpg", "🏗️"],
@@ -54,12 +54,6 @@ Message: ${formData.message}`
     ["Structural Steel Work", "Steel frames, structures and heavy-duty fabrication works.", "/image9.jpg", "🏭"],
     ["Stainless Steel Work", "Stainless steel railings, gates, frames and custom works.", "/image6.jpg", "⚙️"],
     ["Custom Metal Works", "Iron works, roro bin repair and other custom metal solutions.", "/image8.jpg", "🛠️"],
-  ];
-
-  const projects = [
-    ["Premium Gate Work", "/image13.jpg"],
-    ["Stainless Steel Safety Door", "/image18.jpg"],
-    ["Completed Fence Work", "/image11.jpg"],
   ];
 
   return (
@@ -102,7 +96,7 @@ Message: ${formData.message}`
             </a>
           </div>
 
-          <nav className="mt-3 flex overflow-x-auto lg:overflow-visible justify-start lg:justify-center gap-3 sm:gap-4 pb-2 lg:pb-0 no-scrollbar">
+          <nav className="mt-3 flex overflow-x-auto lg:overflow-visible justify-start lg:justify-center gap-3 sm:gap-4 pb-2 lg:pb-0">
             {navItems.map(([id, label]) => (
               <a
                 key={id}
@@ -221,7 +215,8 @@ Message: ${formData.message}`
                 OUR VISION
               </h3>
               <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
-                To become a leading and trusted steel fabrication and engineering company known for quality, reliability, and excellence.
+                To become a leading and trusted steel fabrication and engineering
+                company known for quality, reliability, and excellence.
               </p>
             </div>
 
@@ -230,79 +225,11 @@ Message: ${formData.message}`
                 OUR MISSION
               </h3>
               <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
-                To deliver high-quality steel fabrication and engineering solutions through skilled workmanship, reliable service, safety, integrity and professionalism.
+                To deliver high-quality steel fabrication and engineering
+                solutions through skilled workmanship, reliable service, safety,
+                integrity and professionalism.
               </p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* SERVICES */}
-      <section id="services" className="scroll-mt-36 py-16 md:py-24 px-5 md:px-6 bg-gray-50">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-black text-center text-[#06142b] mb-4">
-            OUR SERVICES
-          </h2>
-
-          <p className="text-center text-gray-600 text-lg max-w-3xl mx-auto mb-12">
-            Complete steel fabrication, welding and metal work solutions for homes, businesses and industrial projects.
-          </p>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map(([title, desc, img, icon], index) => (
-              <div
-                key={index}
-                className="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-2 transition duration-500 border border-gray-200"
-              >
-                <div className="h-72 w-full bg-gray-100 overflow-hidden">
-                  <img
-                    src={img}
-                    alt={title}
-                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                </div>
-
-                <div className="p-6">
-                  <div className="text-4xl mb-4">{icon}</div>
-                  <h3 className="text-xl md:text-2xl font-black text-[#06142b]">
-                    {title}
-                  </h3>
-                  <p className="mt-3 text-gray-600 leading-relaxed">{desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* GALLERY / PROJECTS */}
-      <section id="projects" className="scroll-mt-36 py-16 md:py-24 px-5 md:px-6 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-black text-center text-[#06142b] mb-4">
-            GALLERY
-          </h2>
-
-          <p className="text-center text-gray-600 text-lg mb-12">
-            A sample of our steel, welding and fabrication work.
-          </p>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {projects.map(([title, img], index) => (
-              <div
-                key={index}
-                className="group relative rounded-3xl overflow-hidden shadow-xl h-80 bg-gray-100"
-              >
-                <img
-                  src={img}
-                  alt={title}
-                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent"></div>
-                <div className="absolute inset-x-0 bottom-0 p-6">
-                  <h4 className="text-xl font-black text-white">{title}</h4>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </section>
@@ -327,6 +254,45 @@ Message: ${formData.message}`
                 <div className="text-5xl mb-5">{icon}</div>
                 <h3 className="text-2xl font-black text-[#f5d76e]">{title}</h3>
                 <p className="text-gray-300 mt-4">{desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SERVICES */}
+      <section id="services" className="scroll-mt-36 py-16 md:py-24 px-5 md:px-6 bg-gray-50">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-black text-center text-[#06142b] mb-4">
+            OUR SERVICES
+          </h2>
+
+          <p className="text-center text-gray-600 text-lg max-w-3xl mx-auto mb-12">
+            Complete steel fabrication, welding and metal work solutions for homes,
+            businesses and industrial projects.
+          </p>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.map(([title, desc, img, icon], index) => (
+              <div
+                key={index}
+                className="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-2 transition duration-500 border border-gray-200"
+              >
+                <div className="h-72 w-full bg-gray-100 overflow-hidden">
+                  <img
+                    src={img}
+                    alt={title}
+                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                </div>
+
+                <div className="p-6">
+                  <div className="text-4xl mb-4">{icon}</div>
+                  <h3 className="text-xl md:text-2xl font-black text-[#06142b]">
+                    {title}
+                  </h3>
+                  <p className="mt-3 text-gray-600 leading-relaxed">{desc}</p>
+                </div>
               </div>
             ))}
           </div>
