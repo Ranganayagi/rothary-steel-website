@@ -88,6 +88,12 @@ Message: ${formData.message}`
       icon: "⚙️",
     },
     {
+      title: "Stair Railing",
+      desc: "Modern stainless steel and custom metal stair railings for homes, offices and commercial buildings.",
+      img: "/image22.jpg",
+      icon: "🪜",
+    },
+    {
       title: "Custom Metal Works",
       desc: "Iron works, roro bin repair and other custom metal solutions.",
       img: "/image8.jpg",
@@ -368,7 +374,7 @@ Message: ${formData.message}`
       </section>
 
       {/* WHY CHOOSE US */}
-      <section className="py-16 md:py-24 px-5 md:px-6 bg-[#082318] text-white">
+      <section className="py-16 md:py-24 px-5 md:px-6 bg-[#06142b] text-white">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-black text-center mb-12">
             WHY CHOOSE US
@@ -570,7 +576,7 @@ Message: ${formData.message}`
             <img
               src="/tiktok.png"
               alt="TikTok"
-              className="w-8 h-8 hover:scale-110 transition object-contain"
+              className="w-9 h-9 hover:scale-110 transition object-contain"
             />
           </a>
         </div>
