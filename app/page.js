@@ -1,9 +1,24 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Home() {
   const [active, setActive] = useState("home");
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+  const handleScroll = () => {
+    if (window.scrollY > 80) {
+      setScrolled(true);
+    } else {
+      setScrolled(false);
+    }
+  };
+
+  window.addEventListener("scroll", handleScroll);
+
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
 
   const [formData, setFormData] = useState({
     name: "",
@@ -33,19 +48,19 @@ Message: ${formData.message}`
     {
       title: "Steel Fabrication",
       desc: "Custom steel fabrication for residential, commercial and industrial needs.",
-      img: "/image1.jpg",
+      img: "/image2.jpg",
       icon: "🏗️",
     },
     {
       title: "Welding Works",
       desc: "Reliable welding, repair and metal joining works.",
-      img: "/image2.jpg",
+      img: "/image10.jpg",
       icon: "🔥",
     },
     {
       title: "Awning & Roofing",
       desc: "ACP, PU metal awning, C roof and roof extension works.",
-      img: "/image3.jpg",
+      img: "/image14.jpg",
       icon: "🏠",
     },
     {
@@ -83,78 +98,86 @@ Message: ${formData.message}`
   const projects = [
     {
       title: "Steel Structure Work",
-      img: "/image9.jpg",
+      img: "/image13.jpg",
     },
     {
       title: "Awning & Roof Extension",
-      img: "/image3.jpg",
+      img: "/image18.jpg",
     },
     {
       title: "Welding & Fabrication",
-      img: "/image10.jpg",
+      img: "/image11.jpg",
     },
   ];
 
   return (
     <main className="min-h-screen bg-white text-[#06142b]">
       {/* NAVBAR */}
-      <header className="sticky top-0 z-50 bg-[#06142b] border-b border-[#d4af37]/40 shadow-xl">
-        <div className="max-w-7xl mx-auto px-4 md:px-6 py-3 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
-          <div className="flex items-center justify-center lg:justify-start gap-3">
-            <img
-              src="/logo.png"
-              alt="Rothary Steel Tech Engineering Logo"
-              className="h-14 sm:h-16 lg:h-20 w-auto object-contain"
-            />
+      <header
+  className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
+    scrolled
+      ? "bg-[#06142b]/95 backdrop-blur-md shadow-xl border-b border-[#d4af37]/30"
+      : "bg-transparent"
+  }`}
+>
+  <div className="max-w-7xl mx-auto px-4 md:px-6 py-3 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
 
-            <div className="text-center lg:text-left">
-              <h1 className="text-[#f8e08b] text-base sm:text-lg lg:text-2xl font-black tracking-wide leading-tight">
-                ROTHARY STEEL TECH
-                <br />
-                ENGINEERING
-              </h1>
-              <p className="text-white/90 text-xs sm:text-sm italic tracking-wide mt-1">
-                Precision in Every Structure
-              </p>
-            </div>
-          </div>
+    <div className="flex items-center justify-center lg:justify-start gap-3">
+      <img
+        src="/logo.png"
+        alt="Rothary Steel Tech Engineering Logo"
+        className="h-14 sm:h-16 lg:h-20 w-auto object-contain"
+      />
 
-          <nav className="flex flex-wrap justify-center items-center gap-3 sm:gap-4 lg:gap-3 px-2">
-            {[
-              ["home", "HOME"],
-              ["about", "ABOUT"],
-              ["services", "SERVICES"],
-              ["projects", "PROJECTS"],
-              ["contact", "CONTACT"],
-            ].map(([id, label]) => (
-              <a
-                key={id}
-                href={`#${id}`}
-                onClick={() => setActive(id)}
-                className={`px-4 py-2 rounded-full text-xs lg:text-sm font-bold tracking-wide transition ${
-                  active === id
-                    ? "bg-[#d4af37] text-black"
-                    : "text-[#f5d76e] hover:bg-white/10 hover:text-white"
-                }`}
-              >
-                {label}
-              </a>
-            ))}
-          </nav>
+      <div className="text-center lg:text-left">
+        <h1 className="text-[#f8e08b] text-base sm:text-lg lg:text-2xl font-black tracking-wide leading-tight">
+          ROTHARY STEEL TECH
+          <br />
+          ENGINEERING
+        </h1>
 
-          <a
-            href="#contact"
-            className="w-full lg:w-auto text-center bg-[#d4af37] hover:bg-[#f3d36b] text-black px-6 py-3 font-black rounded-full transition shadow-lg"
-          >
-            GET QUOTE
-          </a>
-        </div>
-      </header>
+        <p className="text-white/90 text-xs sm:text-sm italic tracking-wide mt-1">
+          Precision in Every Structure
+        </p>
+      </div>
+    </div>
+
+    <nav className="flex flex-wrap justify-center items-center gap-4 sm:gap-5 lg:gap-6 px-2">
+      {[
+        ["home", "HOME"],
+        ["about", "ABOUT"],
+        ["services", "SERVICES"],
+        ["projects", "PROJECTS"],
+        ["contact", "CONTACT"],
+      ].map(([id, label]) => (
+        <a
+          key={id}
+          href={`#${id}`}
+          onClick={() => setActive(id)}
+          className={`px-4 py-2 rounded-full text-xs lg:text-sm font-bold tracking-wide transition-all duration-300 ${
+            active === id
+              ? "bg-[#d4af37] text-black"
+              : "text-[#f5d76e] hover:bg-white/10 hover:text-white"
+          }`}
+        >
+          {label}
+        </a>
+      ))}
+    </nav>
+
+    <a
+      href="#contact"
+      className="w-full lg:w-auto text-center bg-[#d4af37] hover:bg-[#f3d36b] text-black px-6 py-3 font-black rounded-full transition shadow-lg"
+    >
+      GET QUOTE
+    </a>
+  </div>
+</header>
 
       {/* HERO */}
       <section
         id="home"
-        className="relative min-h-[88vh] flex items-center bg-cover bg-center"
+        className="relative min-h-[88vh] pt-44 flex items-center bg-cover bg-center"
         style={{ backgroundImage: "url('/image1.jpg')" }}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-[#06142b]/95 via-[#06142b]/85 to-black/70"></div>
@@ -200,7 +223,7 @@ Message: ${formData.message}`
 
           <div className="hidden lg:block">
             <img
-              src="/image2.jpg"
+              src="/image3.jpg"
               alt="Steel welding work"
               className="w-full h-[480px] object-cover object-center rounded-3xl border-4 border-[#d4af37]/40 shadow-2xl"
             />
@@ -389,7 +412,7 @@ Message: ${formData.message}`
 
           {/* PROJECT PREVIEW IMAGES */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
-            {["/image1.jpg", "/image2.jpg", "/image3.jpg", "/image4.jpg"].map(
+            {["/image12.jpg", "/image15.jpg", "/image16.jpg", "/image20.jpg"].map(
               (img, index) => (
                 <div
                   key={index}
@@ -467,18 +490,33 @@ Message: ${formData.message}`
               </a>
             </div>
 
-            <div className="mt-10 pt-8 border-t border-white/10 text-center text-gray-300 space-y-3">
-              <p>
-                📍 Lot 4337, Batu 6, Jalan Maharajalela, Kampung Sri Jaya,
-                36000 Teluk Intan, Perak.
-              </p>
-              <p>📞 +60 11 3602 3592</p>
-              <p>✉️ rotharysteeltechengineering@gmail.com</p>
-              <p>Service Area: Available across Malaysia.</p>
-            </div>
-          </div>
-        </div>
-      </section>
+            {/* GOOGLE MAP */}
+<div className="mt-10 rounded-3xl overflow-hidden shadow-xl border border-white/10">
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3980.339582749128!2d100.96669177497499!3d3.950229596023524!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cb415a2cfccc9d%3A0x2592c7950c1acf53!2sRothary%20Steel%20Tech%20Engineering!5e0!3m2!1sen!2smy!4v1779567714298!5m2!1sen!2smy"
+    width="100%"
+    height="350"
+    style={{ border: 0 }}
+    allowFullScreen=""
+    loading="lazy"
+    referrerPolicy="no-referrer-when-downgrade"
+    className="w-full"
+  ></iframe>
+</div>
+
+{/* COMPANY INFO */}
+<div className="mt-10 pt-8 border-t border-white/10 text-center text-gray-300 space-y-3">
+  <p>
+    📍 Lot 4337, Batu 6, Jalan Maharajalela, Kampung Sri Jaya,
+    36000 Teluk Intan, Perak.
+  </p>
+
+  <p>📞 +60 11 3602 3592</p>
+
+  <p>✉️ rotharysteeltechengineering@gmail.com</p>
+
+  <p>Service Area: Available across Malaysia.</p>
+</div>
 
       {/* FOOTER */}
       <footer className="bg-[#06142b] text-white text-center py-8 px-5 border-t-4 border-[#d4af37]">
@@ -540,18 +578,20 @@ Message: ${formData.message}`
       </footer>
 
       {/* FLOATING WHATSAPP BUTTON */}
-      <a
-        href="https://wa.me/601136023592"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="fixed bottom-5 right-5 z-50 hover:scale-110 transition-transform duration-300"
-      >
-        <img
-          src="/whatsappicon.png"
-          alt="WhatsApp"
-          className="w-20 h-20 object-contain"
-        />
-      </a>
+<a
+  href={`https://wa.me/601136023592?text=${encodeURIComponent(
+    "Hi Rothary Steel Tech Engineering, I would like to request a quotation."
+  )}`}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="fixed bottom-5 right-5 z-50 hover:scale-110 transition-transform duration-300"
+>
+  <img
+    src="/whatsappicon.png"
+    alt="WhatsApp"
+    className="w-20 h-20 object-contain"
+  />
+</a>
     </main>
   );
 }
