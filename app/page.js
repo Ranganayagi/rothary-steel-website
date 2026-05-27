@@ -120,7 +120,7 @@ Message: ${formData.message}`
       : "bg-transparent"
   }`}
 >
-  <div className="max-w-7xl mx-auto px-4 md:px-6 py-3 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+  <div className="max-w-7xl mx-auto px-4 md:px-6 py-2 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-2 lg:gap-4">
 
     <div className="flex items-center justify-center lg:justify-start gap-3">
       <img
@@ -517,6 +517,9 @@ Message: ${formData.message}`
 
   <p>Service Area: Available across Malaysia.</p>
 </div>
+          </div>
+        </div>
+      </section>
 
       {/* FOOTER */}
       <footer className="bg-[#06142b] text-white text-center py-8 px-5 border-t-4 border-[#d4af37]">
