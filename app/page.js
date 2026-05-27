@@ -177,7 +177,7 @@ Message: ${formData.message}`
       {/* HERO */}
       <section
         id="home"
-        className="relative min-h-[88vh] pt-44 flex items-center bg-cover bg-center"
+        className="relative min-h-screen pt-72 sm:pt-64 lg:pt-28 flex items-center bg-cover bg-center"
         style={{ backgroundImage: "url('/image1.jpg')" }}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-[#06142b]/95 via-[#06142b]/85 to-black/70"></div>
